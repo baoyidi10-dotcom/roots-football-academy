@@ -8,291 +8,598 @@
 <meta name="description" content="广州根源足球学院 - 融合葡萄牙与巴西足球文化的青少年足球训练。Roots Football Academy Guangzhou - Portuguese & Brazilian football culture for young players.">
 <meta name="keywords" content="广州足球学院, 青少年足球训练, 巴西足球, 葡萄牙足球, 广州足球培训, football academy Guangzhou, youth football China, Brazilian football coaching">
 <meta name="author" content="Roots Football Academy">
+<meta name="theme-color" content="#143C2B">
 <meta property="og:title" content="Roots Football Academy 根源足球学院 - 广州">
 <meta property="og:description" content="融合葡萄牙与巴西足球文化的青少年足球训练学院">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baoyidi10-dotcom.github.io/roots-football-academy/">
 <meta property="og:image" content="https://baoyidi10-dotcom.github.io/roots-football-academy/images/roots-logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Google Analytics — DISABLED.
-     The placeholder ID G-XXXXXXXXXX did nothing, and Google Analytics is blocked
-     in mainland China, so it would never have loaded for local visitors anyway.
-     If you want analytics that work in China, use Baidu Tongji (百度统计) or
-     Tencent Analytics (腾讯分析) and paste their snippet here instead. -->
+<!-- Analytics deliberately absent. Google Analytics is blocked in mainland China.
+     If you want numbers that work locally, use Baidu Tongji (百度统计) or
+     Tencent Analytics (腾讯分析) and paste their snippet here. -->
 <style>
+/* ============================================================
+   ROOTS FOOTBALL ACADEMY
+   Design language: modernist. Flat surfaces, ruled lines, no
+   rounded corners, flush-left composition, a single gold accent.
+   Palette is locked - do not introduce new hues.
+   Fonts are system stacks on purpose: Google Fonts is blocked in
+   mainland China and would stall the page for local visitors.
+   ============================================================ */
 :root{
   --green:#143C2B; --green2:#0E2C1F; --gold:#C8A34A; --gold2:#E0C070;
   --cream:#F4F1E8; --ink:#1C1C1C; --grey:#6A6A6A; --white:#FFFFFF;
+  --line:rgba(20,60,43,.16);
+  --line-dark:rgba(224,192,112,.26);
+  --pad:clamp(56px,7vw,104px);
+  --gut:clamp(20px,5vw,40px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
-/* language toggle */
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  color:var(--ink);background:var(--cream);line-height:1.65;
+  font-size:16px;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+/* Chinese and Latin need different metrics to look right */
+[data-lang="zh"] body,[data-lang="zh"] .zh{letter-spacing:.01em}
+[data-lang="zh"] .zh{line-height:1.85}
 [data-lang="zh"] .en{display:none}
 [data-lang="en"] .zh{display:none}
-h1,h2,h3{line-height:1.3}
+img,video{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.container{max-width:1080px;margin:0 auto;padding:0 24px}
-section{padding:72px 0}
-.sec-label{color:var(--gold);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.8rem}
-.sec-title{font-size:2rem;color:var(--green);margin:.35em 0 .8em;font-weight:800}
-/* NAV */
-nav{position:sticky;top:0;z-index:50;background:var(--green);box-shadow:0 2px 12px rgba(0,0,0,.25)}
-nav .container{max-width:100%;padding:0 28px}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
-.logo{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:800;font-size:1.05rem;white-space:nowrap;flex-shrink:0}
-@media(max-width:1120px){.logo{font-size:.9rem}}
-.logo .ball{width:30px;height:30px}
-.nav-links{display:flex;gap:26px;align-items:center}
-.nav-links a{color:#E8E4D8;font-size:.92rem;font-weight:600}
-.nav-links a:hover{color:var(--gold2)}
-.lang-btn{background:var(--gold);color:var(--green2);border:none;border-radius:20px;padding:6px 16px;font-weight:800;cursor:pointer;font-size:.85rem}
-.lang-btn:hover{background:var(--gold2)}
-@media(max-width:820px){.nav-links a{display:none}.nav-links .lang-keep{display:inline-block}}
-/* HERO VIDEO BANNER - clean, no text on top (Bali7s style) */
-.hero-video{position:relative;aspect-ratio:5/2;max-height:62vh;min-height:240px;width:100%;background:var(--green2) url('images/roots-hero.jpg') center/cover no-repeat;overflow:hidden}
-.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-video .fade{position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,var(--green));pointer-events:none}
-.hero-video .watch-btn{position:absolute;right:22px;bottom:18px;background:rgba(14,44,31,.72);border:1.5px solid var(--gold);color:var(--gold2);
-  padding:10px 22px;border-radius:26px;font-weight:800;font-size:.92rem;backdrop-filter:blur(4px)}
+::selection{background:var(--gold);color:var(--green2)}
+
+.container{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+.section{padding:var(--pad) 0}
+.section.tight{padding:clamp(40px,5vw,64px) 0}
+
+/* ---------- TYPE SYSTEM ---------- */
+.display{
+  font-size:clamp(2.4rem,7.2vw,5.2rem);
+  line-height:1.02;font-weight:800;letter-spacing:-.033em;
+}
+[data-lang="zh"] .display{letter-spacing:-.01em;line-height:1.18;font-size:clamp(2rem,6.2vw,4.2rem)}
+.sec-title{
+  font-size:clamp(1.75rem,3.9vw,3rem);
+  line-height:1.08;font-weight:800;letter-spacing:-.026em;color:var(--green);
+  margin-bottom:.5em;
+}
+[data-lang="zh"] .sec-title{letter-spacing:-.005em;line-height:1.28}
+.on-dark .sec-title{color:var(--cream)}
+.sec-num{
+  font-size:.72rem;font-weight:700;letter-spacing:.22em;color:var(--gold);
+  font-variant-numeric:tabular-nums;
+}
+.sec-head{
+  display:flex;gap:clamp(16px,3vw,44px);align-items:baseline;
+  border-top:1px solid var(--line);padding-top:20px;margin-bottom:clamp(30px,4vw,52px);
+}
+.on-dark .sec-head{border-color:var(--line-dark)}
+.sec-head .sh-body{flex:1;min-width:0}
+.lede{font-size:clamp(1rem,1.55vw,1.2rem);color:var(--grey);max-width:62ch}
+.on-dark .lede{color:rgba(244,241,232,.78)}
+.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;display:block;
+}
+[data-lang="zh"] .eyebrow{letter-spacing:.12em}
+
+/* ---------- SKIP LINK + PROGRESS ---------- */
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--green2);padding:12px 20px;z-index:200;font-weight:700}
+.skip:focus{left:0}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0;z-index:120;transition:width .1s linear}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:100;background:var(--green);border-bottom:1px solid var(--line-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;color:var(--white);font-weight:800;font-size:.95rem;letter-spacing:-.01em;flex-shrink:0}
+.logo img{height:32px;width:auto}
+.logo .lg-sub{color:var(--gold2);font-weight:600;font-size:.78rem;letter-spacing:.04em}
+@media(max-width:980px){.logo .lg-sub{display:none}}
+.nav-links{display:flex;gap:clamp(14px,2vw,28px);align-items:center}
+.nav-links a{color:rgba(244,241,232,.86);font-size:.85rem;font-weight:600;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold2);border-color:var(--gold)}
+.lang-btn{background:none;color:var(--gold2);border:1px solid var(--gold);padding:7px 15px;font-weight:700;cursor:pointer;font-size:.78rem;letter-spacing:.08em;font-family:inherit;transition:background .18s,color .18s}
+.lang-btn:hover{background:var(--gold);color:var(--green2)}
+.burger{display:none;background:none;border:1px solid var(--line-dark);width:42px;height:38px;cursor:pointer;position:relative}
+.burger span{display:block;width:18px;height:1.5px;background:var(--cream);margin:3.5px auto;transition:transform .28s,opacity .２s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+@media(max-width:900px){
+  .burger{display:block}
+  .nav-links{
+    position:fixed;inset:66px 0 auto 0;background:var(--green2);flex-direction:column;
+    align-items:flex-start;gap:0;padding:8px var(--gut) 26px;
+    border-bottom:1px solid var(--line-dark);
+    transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
+    max-height:calc(100vh - 66px);overflow-y:auto;
+  }
+  .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+  .nav-links a{width:100%;padding:15px 0;border-bottom:1px solid var(--line-dark);font-size:1rem}
+  .nav-links .lang-wrap{padding-top:18px}
+}
+.nav-cta{background:var(--gold);color:var(--green2)!important;padding:9px 17px;font-weight:800;font-size:.8rem;border:none!important}
+.nav-cta:hover{background:var(--gold2)}
+
+/* ---------- HERO VIDEO (kept at the very top, as before) ---------- */
+.hero-video{
+  position:relative;width:100%;background:var(--green2) url('images/roots-hero.jpg') center/cover no-repeat;
+  aspect-ratio:5/2;max-height:64vh;min-height:230px;overflow:hidden;
+}
+.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-video .fade{position:absolute;left:0;right:0;bottom:0;height:38%;
+  background:linear-gradient(transparent,rgba(14,44,31,.55) 55%,var(--green));pointer-events:none}
+.hero-video .watch-btn{
+  position:absolute;right:var(--gut);bottom:20px;background:rgba(14,44,31,.62);
+  border:1px solid var(--gold);color:var(--gold2);padding:10px 20px;font-weight:700;
+  font-size:.82rem;letter-spacing:.06em;backdrop-filter:blur(5px);transition:background .2s,color .2s;
+}
 .hero-video .watch-btn:hover{background:var(--gold);color:var(--green2)}
-/* VIDEOS SECTION */
-.vids{background:var(--white)}
-.vid-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-@media(max-width:820px){.vid-grid{grid-template-columns:1fr 1fr}}
-.vid-card video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:var(--green2);box-shadow:0 6px 20px rgba(20,60,43,.15)}
-.vid-cap{text-align:center;margin-top:10px;font-weight:700;color:var(--green);font-size:.95rem}
-.vid-cap small{display:block;font-weight:400;color:var(--grey);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
-/* HERO CONTENT - below the video */
-.hero{background:linear-gradient(160deg,var(--green) 0%,var(--green2) 70%);color:var(--white);position:relative;overflow:hidden;padding:72px 0 80px}
-.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(200,163,74,.25);border-radius:50%}
-.hero::before{content:"";position:absolute;right:40px;bottom:-160px;width:320px;height:320px;border:2px solid rgba(200,163,74,.18);border-radius:50%}
-.hero h1{font-size:2.7rem;font-weight:900;max-width:720px}
-.hero h1 .hl{color:var(--gold2)}
-.hero p.lead{margin:22px 0 34px;font-size:1.12rem;color:#DCD8CB;max-width:640px}
-.flag-line{display:flex;gap:10px;align-items:center;margin-bottom:18px;font-weight:700;color:var(--gold2);letter-spacing:.12em;font-size:.85rem;text-transform:uppercase}
-.btn{display:inline-block;padding:14px 34px;border-radius:32px;font-weight:800;font-size:1rem}
+
+/* ---------- MASTHEAD ---------- */
+.masthead{background:var(--green);color:var(--cream);padding:clamp(46px,6vw,88px) 0 0}
+.mast-grid{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,54px)}
+@media(min-width:900px){.mast-grid{grid-template-columns:1.35fr .85fr;align-items:end}}
+.mast-flag{font-size:.78rem;letter-spacing:.14em;color:var(--gold2);margin-bottom:20px;font-weight:600}
+.masthead .display{color:var(--cream)}
+.masthead .display .hl{color:var(--gold2)}
+.mast-lead{color:rgba(244,241,232,.8);font-size:clamp(1rem,1.5vw,1.16rem);margin-top:24px;max-width:56ch}
+.mast-badge{width:clamp(96px,13vw,150px);height:auto;margin-bottom:26px;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4))}
+.mast-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{
+  display:inline-block;padding:14px 26px;font-weight:800;font-size:.86rem;letter-spacing:.05em;
+  border:1px solid var(--gold);transition:background .2s,color .2s,transform .2s;font-family:inherit;cursor:pointer;
+}
 .btn-gold{background:var(--gold);color:var(--green2)}
 .btn-gold:hover{background:var(--gold2)}
-.btn-ghost{border:2px solid var(--gold);color:var(--gold2);margin-left:14px}
-.btn-ghost:hover{background:rgba(200,163,74,.12)}
-.hero-stats{display:flex;gap:48px;margin-top:56px;flex-wrap:wrap}
-.hero-stats .stat b{display:block;font-size:1.9rem;color:var(--gold2)}
-.hero-stats .stat span{font-size:.85rem;color:#BDB8A8}
-/* PHILOSOPHY */
-.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-@media(max-width:820px){.phil-grid{grid-template-columns:1fr}}
-.phil-card{background:var(--white);border-radius:14px;padding:30px;border-top:5px solid var(--gold);box-shadow:0 4px 18px rgba(20,60,43,.08)}
-.phil-card h3{color:var(--green);font-size:1.15rem;margin-bottom:10px}
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-@media(max-width:820px){.pillars{grid-template-columns:repeat(2,1fr)}}
-.pillar{background:var(--green);color:var(--cream);border-radius:12px;padding:22px 18px;text-align:center}
-.pillar .ico{font-size:1.6rem;display:block;margin-bottom:8px}
-.pillar b{color:var(--gold2)}
-/* BRANCHES */
-.branches{background:var(--white)}
-.branch-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-@media(max-width:820px){.branch-grid{grid-template-columns:1fr}}
-.branch{border-radius:16px;padding:36px;color:var(--white);position:relative;overflow:hidden}
-.branch.elite{background:linear-gradient(150deg,var(--green),var(--green2))}
-.branch.discovery{background:linear-gradient(150deg,#1E5A3C,#143C2B)}
-.branch .tag{display:inline-block;background:var(--gold);color:var(--green2);font-weight:800;font-size:.75rem;letter-spacing:.14em;padding:4px 14px;border-radius:14px;text-transform:uppercase;margin-bottom:16px}
-.branch h3{font-size:1.5rem;margin-bottom:12px;color:var(--gold2)}
-.branch ul{list-style:none;margin-top:14px}
-.branch li{padding-left:26px;position:relative;margin-bottom:9px;color:#E4E0D4;font-size:.95rem}
-.branch li::before{content:"◆";color:var(--gold);position:absolute;left:0;font-size:.7rem;top:5px}
-/* PROGRAMS */
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px}
-@media(max-width:820px){.price-grid{grid-template-columns:1fr}}
-.price-card{background:var(--white);border-radius:16px;padding:34px;box-shadow:0 4px 18px rgba(20,60,43,.08);border:1px solid #E5E0D2;display:flex;flex-direction:column}
-.price-card.feature{border:2px solid var(--gold)}
-.price-card h3{color:var(--green);font-size:1.2rem}
-.price{font-size:2.2rem;font-weight:900;color:var(--green);margin:14px 0 2px}
-.price small{font-size:.95rem;color:var(--grey);font-weight:600}
-.price-card ul{list-style:none;margin:18px 0 26px}
-.price-card li{padding-left:26px;position:relative;margin-bottom:9px;font-size:.95rem;color:#3A3A3A}
-.price-card li::before{content:"✓";color:var(--gold);font-weight:900;position:absolute;left:0}
-.price-card .btn{margin-top:auto;text-align:center}
-.note{font-size:.85rem;color:var(--grey);margin-top:18px}
-/* COACHES */
-.coaches{background:var(--white)}
-.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-@media(max-width:820px){.coach-grid{grid-template-columns:1fr}}
-.coach{display:flex;gap:22px;background:var(--cream);border-radius:16px;padding:28px;border-left:5px solid var(--gold)}
-.avatar{flex:0 0 84px;height:84px;border-radius:50%;background:var(--green);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.5rem}
-.coach h3{color:var(--green);font-size:1.1rem}
-.coach .role{color:var(--gold);font-weight:700;font-size:.85rem;margin-bottom:8px}
-.coach p{font-size:.92rem;color:#3A3A3A}
-/* INTERNATIONAL */
-.intl{background:linear-gradient(160deg,var(--green),var(--green2));color:var(--cream)}
-.intl .sec-title{color:var(--gold2)}
-.intl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
-@media(max-width:820px){.intl-grid{grid-template-columns:1fr}}
-.intl-card{background:rgba(255,255,255,.06);border:1px solid rgba(200,163,74,.35);border-radius:14px;padding:26px}
-.intl-card .flag{font-size:1.6rem}
-.intl-card h3{color:var(--gold2);margin:8px 0 8px;font-size:1.05rem}
-.intl-card p{font-size:.9rem;color:#D8D4C6}
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
-@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
-.contact-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
-.contact-item .ci{flex:0 0 44px;height:44px;border-radius:10px;background:var(--green);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.contact-item b{display:block;color:var(--green)}
-.qr-box{background:var(--white);border:2px dashed var(--gold);border-radius:16px;padding:30px;text-align:center;color:var(--grey)}
-.qr-img{width:190px;height:190px;margin:0 auto 14px;display:block;border-radius:10px;background:var(--white);object-fit:contain}
-.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--gold2);font-size:1.6rem;animation:bob 1.6s infinite;z-index:2}
-@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
-/* GALLERY - horizontal carousel (JOOSPORTS style) */
-.gallery{background:var(--white)}
+.btn-ghost{background:none;color:var(--gold2)}
+.btn-ghost:hover{background:var(--gold);color:var(--green2)}
+
+/* Ledger strip: credentials as a four-column data row */
+.ledger{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  border-top:1px solid var(--line-dark);margin-top:clamp(38px,5vw,64px);
+}
+@media(min-width:760px){.ledger{grid-template-columns:repeat(4,1fr)}}
+.ledger .cell{padding:24px 20px 26px 0;border-bottom:1px solid var(--line-dark)}
+@media(min-width:760px){
+  .ledger .cell{border-bottom:none;border-right:1px solid var(--line-dark);padding-left:22px}
+  .ledger .cell:first-child{padding-left:0}
+  .ledger .cell:last-child{border-right:none}
+}
+@media(max-width:759px){.ledger .cell:nth-child(odd){padding-right:18px}.ledger .cell:nth-child(even){padding-left:18px;border-left:1px solid var(--line-dark)}}
+/* Motto strip, taken from the club crest */
+.motto{
+  border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);
+  margin-top:0;padding:20px 0;display:flex;flex-wrap:wrap;gap:10px 0;align-items:center;
+}
+.motto span.m{
+  font-size:clamp(.72rem,1.5vw,.95rem);font-weight:800;letter-spacing:.2em;color:var(--gold2);
+  padding:0 clamp(12px,2.4vw,26px);border-right:1px solid var(--line-dark);line-height:1.2;
+}
+.motto span.m:first-child{padding-left:0}
+.motto span.m:last-child{border-right:none}
+[data-lang="zh"] .motto span.m{letter-spacing:.14em}
+.ledger b{
+  display:block;font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800;color:var(--gold2);
+  letter-spacing:-.03em;line-height:1;margin-bottom:9px;font-variant-numeric:tabular-nums;
+}
+.ledger span{font-size:.79rem;color:rgba(244,241,232,.72);line-height:1.45;display:block}
+
+/* ---------- GENERIC PANELS ---------- */
+.on-dark{background:var(--green);color:var(--cream)}
+.on-deep{background:var(--green2);color:var(--cream)}
+.on-white{background:var(--white)}
+
+/* ---------- CARD GRIDS ---------- */
+.grid-2{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:820px){.grid-2{grid-template-columns:1fr 1fr}}
+.on-dark .grid-2{background:var(--line-dark);border-color:var(--line-dark)}
+.cell-card{background:var(--cream);padding:clamp(26px,3.4vw,42px)}
+.on-dark .cell-card{background:var(--green)}
+.on-white .cell-card{background:var(--white)}
+.cell-card h3{font-size:clamp(1.1rem,1.75vw,1.4rem);font-weight:800;color:var(--green);margin-bottom:12px;letter-spacing:-.015em}
+.on-dark .cell-card h3{color:var(--gold2)}
+.cell-card p{color:var(--grey);font-size:.95rem}
+.on-dark .cell-card p{color:rgba(244,241,232,.76)}
+.cell-card .k{font-size:.7rem;letter-spacing:.2em;color:var(--gold);font-weight:700;display:block;margin-bottom:12px}
+
+.grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:900px){.grid-4{grid-template-columns:repeat(4,1fr)}}
+.on-dark .grid-4{background:var(--line-dark);border-color:var(--line-dark)}
+
+/* ---------- PILLARS ---------- */
+.pillar{background:var(--cream);padding:clamp(22px,2.6vw,32px);text-align:left}
+.on-dark .pillar{background:var(--green)}
+.pillar .ico{font-size:1.5rem;display:block;margin-bottom:12px}
+.pillar b{display:block;font-size:1rem;color:var(--green);margin-bottom:5px;font-weight:800}
+.on-dark .pillar b{color:var(--gold2)}
+.pillar small{color:var(--grey);font-size:.85rem;line-height:1.5;display:block}
+.on-dark .pillar small{color:rgba(244,241,232,.7)}
+
+/* ---------- PATHWAYS ---------- */
+.path{background:var(--white);padding:clamp(28px,3.6vw,46px);border-top:3px solid var(--gold)}
+.path.discovery{border-top-color:var(--green)}
+.path .tag{font-size:.7rem;letter-spacing:.2em;font-weight:800;color:var(--gold);display:block;margin-bottom:14px}
+.path.discovery .tag{color:var(--green)}
+.path h3{font-size:clamp(1.3rem,2.2vw,1.75rem);color:var(--green);font-weight:800;margin-bottom:12px;letter-spacing:-.02em}
+.path>p{color:var(--grey);margin-bottom:22px;font-size:.96rem}
+.path ul{list-style:none}
+.path li{
+  padding:13px 0 13px 24px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink);position:relative;
+}
+.path li::before{content:"";position:absolute;left:0;top:19px;width:9px;height:1.5px;background:var(--gold)}
+
+/* ---------- SPAIN STORY ---------- */
+.spain-lead{display:grid;gap:clamp(20px,3vw,48px);align-items:end}
+@media(min-width:880px){.spain-lead{grid-template-columns:1fr 1fr}}
+.spain-cols{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line-dark);
+  border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);margin-top:clamp(30px,4vw,52px)}
+@media(min-width:760px){.spain-cols{grid-template-columns:repeat(3,1fr)}}
+.spain-col{background:var(--green2);padding:clamp(22px,2.8vw,34px) clamp(18px,2.4vw,30px)}
+.spain-col .k{font-size:.7rem;letter-spacing:.18em;color:var(--gold);font-weight:700;display:block;margin-bottom:14px}
+.spain-col p{color:rgba(244,241,232,.8);font-size:.92rem}
+.spain-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);margin-top:1px}
+.spain-strip img{width:100%;height:clamp(120px,17vw,230px);object-fit:cover;filter:grayscale(1) contrast(1.06);transition:filter .5s}
+.spain-strip a:hover img,.spain-strip a:focus-visible img{filter:grayscale(0) contrast(1)}
+
+/* ---------- COACHES ---------- */
+.coach{background:var(--white);padding:clamp(26px,3.4vw,44px);display:grid;gap:22px}
+@media(min-width:600px){.coach{grid-template-columns:auto 1fr;align-items:start}}
+.coach .avatar{
+  width:74px;height:88px;background:var(--green);color:var(--gold2);display:flex;
+  align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;letter-spacing:.04em;flex-shrink:0;
+}
+.coach h3{font-size:clamp(1.1rem,1.7vw,1.35rem);color:var(--green);font-weight:800;letter-spacing:-.015em}
+.coach .role{font-size:.72rem;letter-spacing:.16em;color:var(--gold);font-weight:700;margin:7px 0 14px;text-transform:uppercase}
+.coach p{color:var(--grey);font-size:.92rem}
+.coach .creds{list-style:none;margin-top:16px;border-top:1px solid var(--line)}
+.coach .creds li{font-size:.83rem;color:var(--ink);padding:9px 0;border-bottom:1px solid var(--line)}
+.coach .creds b{color:var(--green);font-weight:700}
+
+/* ---------- QUOTE BAND ---------- */
+.band{
+  background:var(--green2) url('images/roots-wide.jpg') center/cover no-repeat;
+  background-blend-mode:multiply;position:relative;padding:clamp(66px,10vw,150px) 0;
+}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,44,31,.93),rgba(14,44,31,.66))}
+.band .container{position:relative}
+.band p{
+  font-size:clamp(1.4rem,3.6vw,2.7rem);color:var(--cream);font-weight:800;
+  line-height:1.22;letter-spacing:-.024em;max-width:19ch;
+}
+[data-lang="zh"] .band p{line-height:1.45;max-width:16ch}
+.band .gold{color:var(--gold2)}
+
+/* ---------- GALLERY ---------- */
 .car-shell{position:relative}
-.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;scrollbar-width:thin;scrollbar-color:var(--gold) #EDEAE0}
-.car-item{flex:0 0 320px;scroll-snap-align:start}
-@media(max-width:820px){.car-item{flex:0 0 78vw}}
-.car-photo{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#E8E4D6,#DAD5C2);display:block;box-shadow:0 6px 20px rgba(20,60,43,.12)}
-.car-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.car-item:hover .car-photo img{transform:scale(1.06)}
-.g-empty{display:flex;align-items:center;justify-content:center;height:100%;color:#9A957F;font-size:.8rem;text-align:center;padding:12px}
-.car-cap{text-align:center;margin-top:12px;font-weight:700;color:var(--green);font-size:.95rem;letter-spacing:.02em}
-.car-cap small{display:block;font-weight:400;color:var(--grey);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
-.car-btn{position:absolute;top:38%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:var(--green);color:var(--gold2);font-size:1.2rem;cursor:pointer;z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.25)}
-.car-btn:hover{background:var(--gold);color:var(--green2)}
-.car-prev{left:-14px}.car-next{right:-14px}
-@media(max-width:820px){.car-btn{display:none}}
-/* WIDE FEATURE BAND (full-width photo break) */
-.band{position:relative;padding:110px 0;background:var(--green2) center/cover no-repeat;background-image:url('images/roots-wide.jpg')}
-.band::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(14,44,31,.55),rgba(14,44,31,.75))}
-.band .container{position:relative;text-align:center}
-.band p{color:var(--cream);font-size:1.5rem;font-weight:800;max-width:720px;margin:0 auto;line-height:1.5}
-.band span.gold{color:var(--gold2)}
-/* FEATURED VIDEO */
-.video-wrap{position:relative;width:100%;max-width:860px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(20,60,43,.25);background:var(--green2)}
-.video-wrap iframe,.video-wrap video{position:absolute;inset:0;width:100%;height:100%;border:0}
-/* FOOTER */
-footer{background:var(--green2);color:#B9B4A4;padding:36px 0;font-size:.85rem}
-footer .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer b{color:var(--gold2)}
+.car-track{display:flex;gap:1px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:2px}
+.car-track::-webkit-scrollbar{display:none}
+.car-item{flex:0 0 clamp(230px,38vw,370px);scroll-snap-align:start}
+.car-photo{display:block;overflow:hidden;background:var(--green2);cursor:zoom-in}
+.car-photo img{width:100%;height:clamp(180px,24vw,270px);object-fit:cover;transition:transform .55s ease}
+.car-photo:hover img,.car-photo:focus-visible img{transform:scale(1.045)}
+.car-cap{padding:14px 2px 0}
+.car-cap b{display:block;font-size:.92rem;color:var(--green);font-weight:800}
+.car-cap small{color:var(--grey);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.car-nav{display:flex;gap:1px;margin-top:22px}
+.car-btn{
+  width:50px;height:44px;background:var(--white);border:1px solid var(--line);color:var(--green);
+  cursor:pointer;font-size:1rem;transition:background .2s,color .2s;font-family:inherit;
+}
+.car-btn:hover{background:var(--green);color:var(--gold2);border-color:var(--green)}
+
+/* ---------- LIGHTBOX ---------- */
+.lb{position:fixed;inset:0;background:rgba(14,44,31,.965);z-index:150;display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,54px)}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:86vh;object-fit:contain}
+.lb-close,.lb-prev,.lb-next{
+  position:absolute;background:none;border:1px solid var(--line-dark);color:var(--gold2);
+  cursor:pointer;font-size:1.1rem;width:48px;height:48px;transition:background .2s,color .2s;font-family:inherit;
+}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{background:var(--gold);color:var(--green2)}
+.lb-close{top:clamp(14px,3vw,30px);right:clamp(14px,3vw,30px)}
+.lb-prev{left:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%)}
+.lb-next{right:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%)}
+.lb-cap{position:absolute;bottom:clamp(14px,3vw,28px);left:0;right:0;text-align:center;color:rgba(244,241,232,.8);font-size:.83rem;letter-spacing:.07em}
+
+/* ---------- VIDEOS ---------- */
+.vid-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:640px){.vid-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1040px){.vid-grid{grid-template-columns:repeat(4,1fr)}}
+.on-dark .vid-grid{background:var(--line-dark);border-color:var(--line-dark)}
+.vid-card{background:var(--white);padding:0 0 16px}
+.on-dark .vid-card{background:var(--green)}
+.vid-card video{width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--green2);display:block}
+.vid-card.wide video{aspect-ratio:16/9}
+.vid-cap{padding:14px 16px 0}
+.vid-cap b{display:block;font-size:.9rem;color:var(--green);font-weight:800}
+.on-dark .vid-cap b{color:var(--gold2)}
+.vid-cap small{color:var(--grey);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.on-dark .vid-cap small{color:rgba(244,241,232,.6)}
+.vid-tabs{display:flex;gap:1px;margin-bottom:clamp(22px,3vw,36px);flex-wrap:wrap}
+.vid-tab{
+  background:none;border:1px solid var(--line);padding:11px 20px;font-size:.8rem;font-weight:700;
+  letter-spacing:.08em;color:var(--grey);cursor:pointer;font-family:inherit;transition:all .2s;
+}
+.on-dark .vid-tab{border-color:var(--line-dark);color:rgba(244,241,232,.68)}
+.vid-tab[aria-selected="true"]{background:var(--gold);color:var(--green2);border-color:var(--gold)}
+
+/* ---------- PRICING ---------- */
+.price-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:820px){.price-grid{grid-template-columns:repeat(3,1fr)}}
+.price-card{background:var(--white);padding:clamp(26px,3.2vw,40px);display:flex;flex-direction:column}
+.price-card.feature{background:var(--green);color:var(--cream)}
+.price-card h3{font-size:1.06rem;color:var(--green);font-weight:800;margin-bottom:6px}
+.price-card.feature h3{color:var(--gold2)}
+.price-card .price{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;color:var(--green);letter-spacing:-.03em;margin:14px 0 20px;line-height:1;font-variant-numeric:tabular-nums}
+.price-card.feature .price{color:var(--cream)}
+.price-card .price small{font-size:.78rem;font-weight:600;color:var(--grey);letter-spacing:0}
+.price-card.feature .price small{color:rgba(244,241,232,.66)}
+.price-card ul{list-style:none;flex:1;margin-bottom:24px}
+.price-card li{font-size:.87rem;padding:11px 0 11px 22px;border-top:1px solid var(--line);position:relative;color:var(--ink)}
+.price-card.feature li{border-color:var(--line-dark);color:rgba(244,241,232,.86)}
+.price-card li::before{content:"";position:absolute;left:0;top:17px;width:8px;height:1.5px;background:var(--gold)}
+.note{font-size:.82rem;color:var(--grey);margin-top:22px;max-width:70ch}
+
+/* ---------- FAQ ---------- */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  padding:22px 42px 22px 0;font-weight:700;font-size:clamp(.96rem,1.5vw,1.1rem);color:var(--green);
+  cursor:pointer;list-style:none;position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  color:var(--gold);font-size:1.4rem;font-weight:400;transition:transform .25s;
+}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--gold)}
+.faq .ans{padding:0 0 24px;color:var(--grey);font-size:.94rem;max-width:74ch}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-col{background:var(--white);padding:clamp(26px,3.4vw,44px)}
+.contact-col.wechat{background:var(--green);color:var(--cream)}
+.ci-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.ci-row:last-of-type{border-bottom:none}
+.ci-row .ci{width:34px;height:34px;background:var(--green);color:var(--gold2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.95rem}
+.ci-row b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-weight:700}
+.ci-row .v{font-size:.94rem;color:var(--ink)}
+.qr-wrap{text-align:center;padding:clamp(20px,3vw,32px) 0}
+.qr-wrap img{width:min(210px,62vw);height:auto;margin:0 auto 18px;background:var(--white);padding:10px}
+.qr-wrap b{display:block;color:var(--gold2);font-size:1rem;margin-bottom:6px}
+.qr-wrap span{color:rgba(244,241,232,.76);font-size:.87rem}
+.wechat-id{
+  display:inline-block;margin-top:18px;border:1px solid var(--gold);padding:11px 22px;
+  color:var(--gold2);font-weight:800;letter-spacing:.1em;font-size:.95rem;
+}
+form label{display:block;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:6px}
+form input,form select,form textarea{
+  width:100%;padding:13px 14px;border:1px solid var(--line);background:var(--cream);
+  font-size:.94rem;font-family:inherit;color:var(--ink);margin-bottom:16px;
+}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--gold);outline-offset:-2px;background:var(--white)}
+form button{width:100%;border:none}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5vw,66px) 0 34px;border-top:1px solid var(--line-dark)}
+.foot{display:grid;gap:26px}
+@media(min-width:760px){.foot{grid-template-columns:1.3fr 1fr;align-items:start}}
+.foot b{color:var(--cream);font-size:.95rem;letter-spacing:-.01em}
+.foot .fl{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px}
+.foot .fl a{font-size:.83rem;color:rgba(244,241,232,.66);border-bottom:1px solid transparent}
+.foot .fl a:hover{color:var(--gold2);border-color:var(--gold)}
+.foot small{font-size:.78rem;display:block;margin-top:16px;color:rgba(244,241,232,.45)}
+
+/* ---------- MOTION ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-video video{display:none}
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<a class="skip" href="#main"><span class="zh">跳到主要内容</span><span class="en">Skip to content</span></a>
+<div class="progress" id="prog" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
 <nav>
   <div class="container nav-inner">
-    <div class="logo">
-      <img src="images/roots-logo.png" alt="Roots Football Academy badge" style="height:50px;width:auto">
-      <span>ROOTS <span class="zh">根源足球学院</span><span class="en">FOOTBALL ACADEMY</span></span>
-    </div>
-    <div class="nav-links">
-      <a href="#about"><span class="zh">学院理念</span><span class="en">Philosophy</span></a>
-      <a href="#branches"><span class="zh">课程体系</span><span class="en">Programs</span></a>
-      <a href="#pricing"><span class="zh">班级与价格</span><span class="en">Classes & Fees</span></a>
+    <a class="logo" href="#top">
+      <img src="images/roots-logo-icon-gold.png" alt="">
+      <span>ROOTS <span class="lg-sub">根源足球学院</span></span>
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="#partners"><span class="zh">学校与合作</span><span class="en">Schools & Partners</span></a>
+      <a href="#pathways"><span class="zh">课程体系</span><span class="en">Pathways</span></a>
       <a href="#coaches"><span class="zh">教练团队</span><span class="en">Coaches</span></a>
-      <a href="#intl"><span class="zh">国际赛事</span><span class="en">International</span></a>
-      <a href="#gallery"><span class="zh">影像</span><span class="en">Gallery</span></a>
-      <a href="#videos"><span class="zh">视频</span><span class="en">Videos</span></a>
-      <a href="#videos-china"><span class="zh">中国训练营</span><span class="en">China Training</span></a>
-      <a href="#partners"><span class="zh">合作伙伴</span><span class="en">Partners</span></a>
-      <a href="#contact"><span class="zh">联系我们</span><span class="en">Contact</span></a>
-      <button class="lang-btn lang-keep" onclick="toggleLang()"><span class="zh">EN</span><span class="en">中文</span></button>
+      <a href="#spain"><span class="zh">西班牙 2026</span><span class="en">Spain 2026</span></a>
+      <a href="#media"><span class="zh">影像</span><span class="en">Media</span></a>
+      <a href="#fees"><span class="zh">价格</span><span class="en">Fees</span></a>
+      <a class="nav-cta" href="#contact"><span class="zh">咨询报名</span><span class="en">Enquire</span></a>
+      <span class="lang-wrap"><button class="lang-btn" onclick="toggleLang()"><span class="zh">EN</span><span class="en">中文</span></button></span>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<!-- ============================================================
-     HERO VIDEO BANNER - plays clean at the top, nothing over it.
-     File: videos/roots-hero.mp4 (muted loop). If the file is missing,
-     the photo images/roots-hero.jpg shows instead.
-     ============================================================ -->
-<div class="hero-video">
-  <video autoplay muted loop playsinline poster="images/roots-hero.jpg">
+<!-- ============ HERO VIDEO — stays at the top, as it was ============ -->
+<div class="hero-video" id="top">
+  <video autoplay muted loop playsinline preload="metadata" poster="images/roots-hero.jpg">
     <source src="videos/roots-hero.mp4" type="video/mp4">
   </video>
   <div class="fade"></div>
-  <a class="watch-btn" href="#videos">▶ <span class="zh">观看视频</span><span class="en">Watch Videos</span></a>
+  <a class="watch-btn" href="#media">▶ <span class="zh">观看视频</span><span class="en">Watch Videos</span></a>
 </div>
 
-<header class="hero">
+<main id="main">
+
+<!-- ============ MASTHEAD ============ -->
+<header class="masthead">
   <div class="container">
-    <img src="images/roots-logo.png" alt="Roots Football Academy badge"
-         style="height:170px;width:auto;margin-bottom:22px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.45))">
-    <div class="flag-line">🇵🇹 Portugal &nbsp;×&nbsp; 🇧🇷 Brasil &nbsp;·&nbsp; <span class="zh">扎根广州</span><span class="en">Rooted in Guangzhou</span> 🇨🇳</div>
-    <h1>
-      <span class="zh">把葡萄牙和巴西的<span class="hl">足球基因</span>，带给中国的孩子</span>
-      <span class="en">Bringing the <span class="hl">football DNA</span> of Portugal & Brazil to children in China</span>
-    </h1>
-    <p class="lead">
-      <span class="zh">根源足球学院由葡萄牙职业教练与巴西前职业球员联合创办。我们相信：技术、纪律与热爱，是每一位小球员成长的根。</span>
-      <span class="en">Founded by a Portuguese professional coach and a former Brazilian professional player, Roots believes technique, discipline and passion are the roots of every young player's growth.</span>
-    </p>
-    <a class="btn btn-gold" href="#partners"><span class="zh">合作与赛事邀请</span><span class="en">Partner With Us</span></a>
-    <a class="btn btn-ghost" href="#contact"><span class="zh">咨询课程与报名</span><span class="en">Enquire & Enrol</span></a>
-    <div class="hero-stats">
-      <div class="stat"><b>10+</b><span class="zh">年在华执教经验</span><span class="en">years coaching in China</span></div>
-      <div class="stat"><b>2</b><span class="zh">大培养体系：精英 & 启蒙</span><span class="en">pathways: Elite & Discovery</span></div>
-      <div class="stat"><b>6</b><span class="zh">人开班 · 小班制教学</span><span class="en">players — small-group training</span></div>
-      <div class="stat"><b>🇪🇸 2026</b><span class="zh">西班牙国际赛事之旅</span><span class="en">Spain tournament tour</span></div>
+    <div class="mast-grid">
+      <div>
+        <img class="mast-badge" src="images/roots-logo-light.png" alt="Roots Football Academy badge">
+        <div class="mast-flag">🇵🇹 PORTUGAL &nbsp;×&nbsp; 🇧🇷 BRASIL &nbsp;·&nbsp; <span class="zh">扎根广州</span><span class="en">ROOTED IN GUANGZHOU</span> 🇨🇳</div>
+        <h1 class="display">
+          <span class="zh">把葡萄牙和巴西的<span class="hl">足球基因</span>，带给中国的孩子</span>
+          <span class="en">The football DNA of Portugal and Brazil, <span class="hl">taught in Guangzhou</span></span>
+        </h1>
+      </div>
+      <div>
+        <p class="mast-lead">
+          <span class="zh">根源足球学院由葡萄牙职业教练与巴西前职业球员联合创办。我们相信：技术、纪律与热爱，是每一位小球员成长的根。</span>
+          <span class="en">Founded by a Portuguese professional coach and a former Brazilian professional player. We believe technique, discipline and passion are the roots of every young player's growth.</span>
+        </p>
+        <div class="mast-actions">
+          <a class="btn btn-gold" href="#partners"><span class="zh">学校与赛事合作</span><span class="en">Schools & Partners</span></a>
+          <a class="btn btn-ghost" href="#contact"><span class="zh">咨询课程</span><span class="en">Enquire</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger">
+      <div class="cell"><b data-count="10" data-suffix="+">10+</b><span class="zh">年在华执教经验</span><span class="en">years coaching in China</span></div>
+      <div class="cell"><b data-count="250" data-suffix="+">250+</b><span class="zh">技术总监职业比赛场次</span><span class="en">pro matches, technical director</span></div>
+      <div class="cell"><b data-count="4" data-suffix="">4</b><span class="zh">种工作语言，无需翻译</span><span class="en">working languages, no interpreter</span></div>
+      <div class="cell"><b>2026</b><span class="zh">西班牙国际赛事之旅</span><span class="en">Spain international tour</span></div>
+    </div>
+
+    <!-- Club motto, taken from the crest -->
+    <div class="motto">
+      <span class="m"><span class="zh">拼搏</span><span class="en">EFFORT</span></span>
+      <span class="m"><span class="zh">专注</span><span class="en">DEDICATION</span></span>
+      <span class="m"><span class="zh">赤诚</span><span class="en">DEVOTION</span></span>
+      <span class="m"><span class="zh">荣耀</span><span class="en">GLORY</span></span>
     </div>
   </div>
-  <a class="scroll-hint" href="#about" aria-label="Scroll down">▾</a>
 </header>
 
-<!-- PHILOSOPHY -->
-<section id="about">
+<!-- ============ 01 SCHOOLS & PARTNERS (audience first) ============ -->
+<section class="section on-dark" id="partners">
   <div class="container">
-    <div class="sec-label"><span class="zh">学院理念</span><span class="en">Our Philosophy</span></div>
-    <h2 class="sec-title"><span class="zh">从街头足球到现代科学</span><span class="en">From Street Football to Modern Science</span></h2>
-    <div class="phil-grid">
-      <div class="phil-card">
-        <h3><span class="zh">🌍 我们的根</span><span class="en">🌍 Our Roots</span></h3>
-        <p>
-          <span class="zh">在葡萄牙和巴西，足球从街头开始--用纸做的球、用书包摆的球门。正是这种纯粹的热爱，孕育了世界上最具创造力的球员。我们把这种文化带到广州，让孩子先爱上足球，再成为球员。</span>
-          <span class="en">In Portugal and Brazil, football starts in the street - paper balls, schoolbag goalposts. That pure passion produced the world's most creative players. We bring this culture to Guangzhou: children fall in love with the game first, then become players.</span>
-        </p>
-      </div>
-      <div class="phil-card">
-        <h3><span class="zh">🔬 我们的方法</span><span class="en">🔬 Our Method</span></h3>
-        <p>
-          <span class="zh">热爱之上是专业：我们将现代运动科学、系统的技术基本功训练与欧洲青训体系相结合，为每个年龄段设计科学的训练计划，并定期向家长反馈孩子的成长。</span>
-          <span class="en">On top of passion comes professionalism: we combine modern sports science, systematic technical fundamentals and European youth-development methodology, with age-appropriate training plans and regular progress feedback to parents.</span>
+    <div class="sec-head rv">
+      <div class="sec-num">01</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">学校 · 赛事主办方 · 俱乐部</span><span class="en">Schools · Organisers · Clubs</span></span>
+        <h2 class="sec-title"><span class="zh">一支随时可以出征的国际化队伍</span><span class="en">A travel-ready, professionally run academy</span></h2>
+        <p class="lede">
+          <span class="zh">如果您是学校、赛事主办方或海外俱乐部，以下是与我们合作所需的核心信息。我们在48小时内回复合作咨询，可用英语、葡萄牙语、法语或中文沟通。</span>
+          <span class="en">If you are a school, tournament organiser or overseas club, here is what you need to work with us. We answer partnership enquiries within 48 hours, in English, Portuguese, French or Mandarin.</span>
         </p>
       </div>
     </div>
-    <div class="pillars">
-      <div class="pillar"><span class="ico">⚽</span><b><span class="zh">技术</span><span class="en">Technique</span></b><br><span class="zh">扎实的基本功</span><span class="en">Solid fundamentals</span></div>
-      <div class="pillar"><span class="ico">🤝</span><b><span class="zh">团队</span><span class="en">Teamwork</span></b><br><span class="zh">学会一起赢球</span><span class="en">Winning together</span></div>
-      <div class="pillar"><span class="ico">🎯</span><b><span class="zh">纪律</span><span class="en">Discipline</span></b><br><span class="zh">受益一生的习惯</span><span class="en">Habits for life</span></div>
-      <div class="pillar"><span class="ico">🔥</span><b><span class="zh">热爱</span><span class="en">Passion</span></b><br><span class="zh">足球的快乐本源</span><span class="en">The joy of the game</span></div>
+
+    <div class="grid-2 rv">
+      <div class="cell-card">
+        <span class="k">01 / <span class="zh">法律主体</span><span class="en">LEGAL ENTITY</span></span>
+        <h3><span class="zh">正规注册机构</span><span class="en">Registered & Accountable</span></h3>
+        <p><span class="zh">广州普巴足球俱乐部有限公司，在中国正式注册的足球俱乐部，具备签署合作协议、开具发票与组织跨境行程的法律主体资格。</span>
+        <span class="en">Officially registered in China as <b>Guangzhou Puba Football Club Co., Ltd.</b> A legal entity able to sign agreements, issue invoices (发票), and organise cross-border team travel with full parental consent documentation.</span></p>
+      </div>
+      <div class="cell-card">
+        <span class="k">02 / <span class="zh">国际经验</span><span class="en">TRACK RECORD</span></span>
+        <h3><span class="zh">国际参赛经验</span><span class="en">International Tournament Experience</span></h3>
+        <p><span class="zh">2026年6月率队赴西班牙参加 MICFootball7 与 FOOTVIA 国际锦标赛，具备完整的签证、监护与保险文件流程经验。</span>
+        <span class="en">In June 2026 we took a squad to Spain for <b>MICFootball7 '26 and the FOOTVIA International Tournament</b>, with full experience of visa support letters, guardianship documents and travel insurance.</span></p>
+      </div>
+      <div class="cell-card">
+        <span class="k">03 / <span class="zh">语言</span><span class="en">LANGUAGES</span></span>
+        <h3><span class="zh">多语言团队</span><span class="en">Multilingual Staff</span></h3>
+        <p><span class="zh">教练团队可用英语、葡萄牙语、法语和中文直接沟通，无需翻译中介。</span>
+        <span class="en">Our coaching staff communicates directly in <b>English, Portuguese, French and Mandarin</b>. No intermediaries or translators needed at any stage.</span></p>
+      </div>
+      <div class="cell-card">
+        <span class="k">04 / <span class="zh">队伍构成</span><span class="en">DELEGATION</span></span>
+        <h3><span class="zh">标准出行编制</span><span class="en">Standard Travel Delegation</span></h3>
+        <p><span class="zh">每队10-14名球员 + 2-3名持证教练 + 随行家长。所有球员均有出生证明文件与保险。</span>
+        <span class="en"><b>10-14 players per squad, 2-3 qualified coaches</b>, plus accompanying parents. All players travel with verified date-of-birth documents and insurance cover.</span></p>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(28px,4vw,44px)" class="rv">
+      <a class="btn btn-gold" href="mailto:rootsfootballacademy@proton.me?subject=Partnership%20Enquiry%20-%20Roots%20Football%20Academy">
+        <span class="zh">发送合作邮件</span><span class="en">Send a Partnership Enquiry</span></a>
     </div>
   </div>
 </section>
 
-<!-- BRANCHES -->
-<section id="branches" class="branches">
+<!-- ============ 02 PHILOSOPHY ============ -->
+<section class="section" id="about">
   <div class="container">
-    <div class="sec-label"><span class="zh">课程体系</span><span class="en">Two Pathways</span></div>
-    <h2 class="sec-title"><span class="zh">两大培养路径，适合每一个孩子</span><span class="en">A pathway for every child</span></h2>
-    <div class="branch-grid">
-      <div class="branch elite">
-        <span class="tag">Roots Elite</span>
+    <div class="sec-head rv">
+      <div class="sec-num">02</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">学院理念</span><span class="en">Our Philosophy</span></span>
+        <h2 class="sec-title"><span class="zh">从街头足球到现代科学</span><span class="en">From street football to modern science</span></h2>
+      </div>
+    </div>
+    <div class="grid-2 rv">
+      <div class="cell-card">
+        <h3><span class="zh">我们的根</span><span class="en">Our Roots</span></h3>
+        <p><span class="zh">在葡萄牙和巴西，足球从街头开始，用纸做的球、用书包摆的球门。正是这种纯粹的热爱，孕育了世界上最具创造力的球员。我们把这种文化带到广州，让孩子先爱上足球，再成为球员。</span>
+        <span class="en">In Portugal and Brazil, football starts in the street: paper balls, schoolbags for goalposts. That pure passion produced the world's most creative players. We bring this culture to Guangzhou. Children fall in love with the game first, then become players.</span></p>
+      </div>
+      <div class="cell-card">
+        <h3><span class="zh">我们的方法</span><span class="en">Our Method</span></h3>
+        <p><span class="zh">热爱之上是专业：我们将现代运动科学、系统的技术基本功训练与欧洲青训体系相结合，为每个年龄段设计科学的训练计划，并定期向家长反馈孩子的成长。</span>
+        <span class="en">On top of passion comes professionalism. We combine modern sports science, systematic technical fundamentals and European youth-development methodology, with age-appropriate training plans and regular progress feedback to parents.</span></p>
+      </div>
+    </div>
+    <div class="grid-4 rv" style="margin-top:1px">
+      <div class="pillar"><span class="ico">⚽</span><b><span class="zh">技术</span><span class="en">Technique</span></b><small><span class="zh">扎实的基本功</span><span class="en">Solid fundamentals</span></small></div>
+      <div class="pillar"><span class="ico">🤝</span><b><span class="zh">团队</span><span class="en">Teamwork</span></b><small><span class="zh">学会一起赢球</span><span class="en">Winning together</span></small></div>
+      <div class="pillar"><span class="ico">🎯</span><b><span class="zh">纪律</span><span class="en">Discipline</span></b><small><span class="zh">受益一生的习惯</span><span class="en">Habits for life</span></small></div>
+      <div class="pillar"><span class="ico">🔥</span><b><span class="zh">热爱</span><span class="en">Passion</span></b><small><span class="zh">足球的快乐本源</span><span class="en">The joy of the game</span></small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 PATHWAYS ============ -->
+<section class="section on-white" id="pathways">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="sec-num">03</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">课程体系</span><span class="en">Two Pathways</span></span>
+        <h2 class="sec-title"><span class="zh">两大培养路径，适合每一个孩子</span><span class="en">A pathway for every child</span></h2>
+      </div>
+    </div>
+    <div class="grid-2 rv">
+      <div class="path">
+        <span class="tag">ROOTS ELITE</span>
         <h3><span class="zh">精英培养体系</span><span class="en">Elite Development</span></h3>
-        <p><span class="zh">面向有天赋、有志向的小球员，目标是通往职业足球的道路。融合欧洲的体系化训练与巴西的技术流打法。</span><span class="en">For talented, ambitious young players aiming at the professional pathway - combining European structured development with Brazilian technical methodology.</span></p>
+        <p><span class="zh">面向有天赋、有志向的小球员，目标是通往职业足球的道路。融合欧洲的体系化训练与巴西的技术流打法。</span><span class="en">For talented, ambitious young players aiming at the professional pathway. European structured development combined with Brazilian technical methodology.</span></p>
         <ul>
-          <li><span class="zh">欧洲青训体系 + 巴西技术流方法论 + 个人技术档案</span><span class="en">European development system + Brazilian technical methodology + individual technical profile</span></li>
-          <li><span class="zh">巴西风格小场对抗训练，强化控球、盘带与比赛阅读能力</span><span class="en">Brazilian-style small-sided games to sharpen ball control, dribbling and game reading</span></li>
-          <li><span class="zh">国内外赛事：西班牙、新加坡、日本等国际比赛机会</span><span class="en">Domestic & international tournaments: Spain, Singapore, Japan and more</span></li>
-          <li><span class="zh">葡萄牙/巴西职业圈层资源与球探视野</span><span class="en">Access to Portuguese/Brazilian professional networks and scouting exposure</span></li>
-          <li><span class="zh">身体素质与运动科学监测</span><span class="en">Physical development & sports-science monitoring</span></li>
+          <li><span class="zh">欧洲青训体系 + 巴西技术流方法论 + 个人技术档案</span><span class="en">European development system, Brazilian technical methodology, individual technical profile</span></li>
+          <li><span class="zh">巴西风格小场对抗训练，强化控球、盘带与比赛阅读能力</span><span class="en">Brazilian-style small-sided games sharpening ball control, dribbling and game reading</span></li>
+          <li><span class="zh">国内外赛事：西班牙、新加坡、日本等国际比赛机会</span><span class="en">Domestic and international tournaments: Spain, Singapore, Japan and more</span></li>
+          <li><span class="zh">葡萄牙/巴西职业圈层资源与球探视野</span><span class="en">Access to Portuguese and Brazilian professional networks, and scouting exposure</span></li>
+          <li><span class="zh">身体素质与运动科学监测</span><span class="en">Physical development and sports-science monitoring</span></li>
         </ul>
       </div>
-      <div class="branch discovery">
-        <span class="tag">Roots Discovery</span>
+      <div class="path discovery">
+        <span class="tag">ROOTS DISCOVERY</span>
         <h3><span class="zh">快乐启蒙体系</span><span class="en">Discovery Program</span></h3>
         <p><span class="zh">与学校合作，让每个孩子在快乐中掌握足球基础，同时接触英语环境。</span><span class="en">School partnerships where every child learns football fundamentals in a fun, English-friendly environment.</span></p>
         <ul>
-          <li><span class="zh">足球基础技能 + 巴西五人制风格的趣味小场训练</span><span class="en">Basic football skills + Brazilian futsal-style small-sided games</span></li>
-          <li><span class="zh">外教英语氛围，运动中学语言</span><span class="en">Foreign coaches - learning English through sport</span></li>
-          <li><span class="zh">校园合作课程与课后班</span><span class="en">In-school programs and after-school classes</span></li>
+          <li><span class="zh">足球基础技能 + 巴西五人制风格的趣味小场训练</span><span class="en">Basic football skills and Brazilian futsal-style small-sided games</span></li>
+          <li><span class="zh">外教英语氛围，运动中学语言</span><span class="en">Foreign coaches, learning English through sport</span></li>
+          <li><span class="zh">校园合作课程与课后班（ECA / CCA）</span><span class="en">In-school programs and after-school classes (ECA / CCA)</span></li>
           <li><span class="zh">培养自信、专注与团队精神</span><span class="en">Building confidence, focus and team spirit</span></li>
         </ul>
       </div>
@@ -300,367 +607,497 @@ footer b{color:var(--gold2)}
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing">
+<!-- ============ QUOTE BAND ============ -->
+<div class="band">
   <div class="container">
-    <div class="sec-label"><span class="zh">班级与价格</span><span class="en">Classes & Fees</span></div>
-    <h2 class="sec-title"><span class="zh">透明的价格，看得见的成长</span><span class="en">Transparent fees, visible progress</span></h2>
-    <div class="price-grid">
+    <p class="rv"><span class="zh">「先爱上足球，<span class="gold">再成为球员</span>。」</span>
+       <span class="en">Fall in love with the game first. <span class="gold">Then become a player.</span></span></p>
+  </div>
+</div>
+
+<!-- ============ 04 COACHES ============ -->
+<section class="section" id="coaches">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="sec-num">04</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">教练团队</span><span class="en">Founders & Coaches</span></span>
+        <h2 class="sec-title"><span class="zh">真正的欧洲与南美职业背景</span><span class="en">Genuine European and South American pedigree</span></h2>
+      </div>
+    </div>
+    <div class="grid-2 rv">
+      <div class="coach">
+        <!-- REPLACE: swap .avatar for a real 3:4 headshot when available -->
+        <div class="avatar">ID</div>
+        <div>
+          <h3><span class="zh">Idris 教练（葡萄牙）</span><span class="en">Coach Idris (Portugal)</span></h3>
+          <div class="role"><span class="zh">联合创始人 · 主教练</span><span class="en">Co-Founder · Head Coach</span></div>
+          <p><span class="zh">葡萄牙职业青训教练，曾在法国、韩国执教，自2010年起长居中国。中文流利，深刻理解中国家庭的教育期望，是孩子与家长都信任的沟通桥梁。</span>
+          <span class="en">Portuguese youth coach with professional experience in France and South Korea, based in China since 2010. Fluent in Mandarin, he bridges European football culture and the expectations of Chinese families.</span></p>
+          <ul class="creds">
+            <li><b>UEFA C</b> <span class="zh">· 教练证书（进行中）</span><span class="en">· Coaching Licence (in progress)</span></li>
+            <li><span class="zh">工作语言：葡萄牙语 · 英语 · 法语 · 中文</span><span class="en">Languages: Portuguese · English · French · Mandarin</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="coach">
+        <!-- REPLACE: swap .avatar for a real 3:4 headshot when available -->
+        <div class="avatar">RP</div>
+        <div>
+          <h3><span class="zh">Rodrigo Paixão Mesquita 教练（巴西）</span><span class="en">Coach Rodrigo Paixão Mesquita (Brazil)</span></h3>
+          <div class="role"><span class="zh">联合创始人 · 技术总监</span><span class="en">Co-Founder · Technical Director</span></div>
+          <p><span class="zh">巴西职业前腰球员，从国际体育俱乐部（Internacional）青训体系出道，代表国际队与菲格伦斯竞技（Figueirense）征战巴西联赛，并三次夺得南里奥格兰德州联赛冠军。自2009年起在中国职业联赛效力九年，随后转型教练。</span>
+          <span class="en">Came through Sport Club Internacional's youth academy and played in Brazil's top flight for Internacional and Figueirense, winning the Campeonato Gaúcho three times (2003, 2004, 2005). From 2009 he built a nine-year career in Chinese professional football before moving into coaching.</span></p>
+          <ul class="creds">
+            <li><b>CBF Academy Licence A</b> <span class="zh">· 2025</span><span class="en">· 2025</span></li>
+            <li><b>250+</b> <span class="zh">场职业比赛</span><span class="en">professional matches</span></li>
+            <li><span class="zh">巴西 U17 / U18 / U20 国青队</span><span class="en">Brazil youth national teams U17 / U18 / U20</span></li>
+            <li><span class="zh">在华效力5家职业俱乐部，共9年</span><span class="en">9 years, 5 professional clubs in China</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 SPAIN 2026 ============ -->
+<section class="section on-deep" id="spain">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="sec-num">05</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">国际赛场</span><span class="en">International Stage</span></span>
+      </div>
+    </div>
+    <div class="spain-lead rv">
+      <h2 class="sec-title" style="margin:0"><span class="zh">西班牙，2026年6月</span><span class="en">Spain, June 2026</span></h2>
+      <p class="lede">
+        <span class="zh">十一天，两项赛事，一支来自广州的队伍。签证信、监护文件与保险全部由学院内部处理，而这正是决定一次跨国出征能否成行的关键。</span>
+        <span class="en">Eleven days, two tournaments, one squad from Guangzhou. Visa letters, guardianship papers and insurance handled in-house, the part that decides whether a trip like this happens at all.</span>
+      </p>
+    </div>
+    <div class="spain-cols rv">
+      <div class="spain-col">
+        <span class="k">01 · <span class="zh">赛事</span><span class="en">THE TOURNAMENTS</span></span>
+        <p><span class="zh">MICFootball7 '26 与 FOOTVIA 国际锦标赛，与来自全欧洲的青训学院同场竞技。</span><span class="en">MICFootball7 '26 and the FOOTVIA International Tournament, against academies from across Europe.</span></p>
+      </div>
+      <div class="spain-col">
+        <span class="k">02 · <span class="zh">俱乐部探访</span><span class="en">THE CLUB VISIT</span></span>
+        <p><span class="zh">走进赫罗纳俱乐部与蒙蒂利维球场：更衣室、草皮，以及一家西甲俱乐部如何运营青训。</span><span class="en">A day at Girona FC and Estadi Montilivi: dressing room, pitch, and how a La Liga club runs its academy.</span></p>
+      </div>
+      <div class="spain-col">
+        <span class="k">03 · <span class="zh">带回了什么</span><span class="en">WHAT CAME BACK</span></span>
+        <p><span class="zh">531张照片，每位球员的参赛与支持信，以及一支曾在欧洲球探面前踢过球的队伍。</span><span class="en">531 photographs, participation and support letters for every player, and a squad that has now played in front of European scouts.</span></p>
+      </div>
+    </div>
+    <div class="spain-strip rv">
+      <a href="images/roots-3.jpg" class="lb-link" data-cap="Roots in Spain 2026"><img src="images/roots-3.jpg" alt="Roots players in Spain, 2026" loading="lazy"></a>
+      <a href="images/roots-4.jpg" class="lb-link" data-cap="Flying the flag, Spain 2026"><img src="images/roots-4.jpg" alt="Roots squad representing in Spain" loading="lazy"></a>
+      <a href="images/roots-11.jpg" class="lb-link" data-cap="MICFootball7 '26"><img src="images/roots-11.jpg" alt="Roots at MICFootball7 2026" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="sec-num">06</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">影像记录</span><span class="en">Gallery</span></span>
+        <h2 class="sec-title"><span class="zh">训练与比赛瞬间</span><span class="en">Training and match moments</span></h2>
+      </div>
+    </div>
+    <div class="car-shell rv">
+      <div class="car-track" id="carTrack">
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-1.jpg" data-cap="Fearless — MICFootball7 2026"><img src="images/roots-1.jpg" alt="Roots training session" loading="lazy"></a><div class="car-cap"><b><span class="zh">无所畏惧</span><span class="en">Fearless</span></b><small>MICFootball7 2026</small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-2.jpg" data-cap="Ready for battle — Match day"><img src="images/roots-2.jpg" alt="Roots match day warm-up" loading="lazy"></a><div class="car-cap"><b><span class="zh">赛前热身</span><span class="en">Ready For Battle</span></b><small><span class="zh">比赛日</span><span class="en">Match Day</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-5.jpg" data-cap="Celebration — International 2026"><img src="images/roots-5.jpg" alt="Roots players celebrating" loading="lazy"></a><div class="car-cap"><b><span class="zh">胜利时刻</span><span class="en">Celebration Time</span></b><small><span class="zh">国际赛事 2026</span><span class="en">International 2026</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-6.jpg" data-cap="Coaching detail"><img src="images/roots-6.jpg" alt="Roots coaching session" loading="lazy"></a><div class="car-cap"><b><span class="zh">教练指导</span><span class="en">Coaching Detail</span></b><small><span class="zh">广州基地</span><span class="en">Guangzhou Base</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-7.jpg" data-cap="Ball mastery"><img src="images/roots-7.jpg" alt="Roots ball mastery training" loading="lazy"></a><div class="car-cap"><b><span class="zh">技术打磨</span><span class="en">Ball Mastery</span></b><small><span class="zh">日常训练</span><span class="en">Everyday Training</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-8.jpg" data-cap="Team spirit"><img src="images/roots-8.jpg" alt="Roots team togetherness" loading="lazy"></a><div class="car-cap"><b><span class="zh">团队精神</span><span class="en">Team Spirit</span></b><small><span class="zh">齐心协力</span><span class="en">Togetherness</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-9.jpg" data-cap="Small-sided games"><img src="images/roots-9.jpg" alt="Roots small-sided game" loading="lazy"></a><div class="car-cap"><b><span class="zh">小场对抗</span><span class="en">Small-Sided Games</span></b><small><span class="zh">巴西风格</span><span class="en">Brazilian Style</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-10.jpg" data-cap="Match day"><img src="images/roots-10.jpg" alt="Roots on match day" loading="lazy"></a><div class="car-cap"><b><span class="zh">比赛日</span><span class="en">Match Day</span></b><small><span class="zh">全力以赴</span><span class="en">All In</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-12.jpg" data-cap="Roots in Spain"><img src="images/roots-12.jpg" alt="Roots squad in Spain" loading="lazy"></a><div class="car-cap"><b><span class="zh">西班牙之旅</span><span class="en">Roots In Spain</span></b><small>2026</small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-13.jpg" data-cap="The squad"><img src="images/roots-13.jpg" alt="Roots squad photo" loading="lazy"></a><div class="car-cap"><b><span class="zh">我们的队伍</span><span class="en">The Squad</span></b><small><span class="zh">根源足球学院</span><span class="en">Roots Academy</span></small></div></div>
+        <div class="car-item"><a class="car-photo lb-link" href="images/roots-14.jpg" data-cap="Passion and pride"><img src="images/roots-14.jpg" alt="Roots players celebrating" loading="lazy"></a><div class="car-cap"><b><span class="zh">热爱与荣耀</span><span class="en">Passion & Pride</span></b><small><span class="zh">庆祝时刻</span><span class="en">Celebration</span></small></div></div>
+      </div>
+      <div class="car-nav">
+        <button class="car-btn" onclick="carScroll(-1)" aria-label="Previous photos">&#10094;</button>
+        <button class="car-btn" onclick="carScroll(1)" aria-label="Next photos">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 MEDIA (Spain tour + Guangzhou training, merged) ============ -->
+<section class="section on-dark" id="media">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="sec-num">07</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">视频专区</span><span class="en">Videos</span></span>
+        <h2 class="sec-title"><span class="zh">看我们真实的样子</span><span class="en">See how we actually work</span></h2>
+      </div>
+    </div>
+
+    <div class="vid-tabs rv" role="tablist">
+      <button class="vid-tab" role="tab" aria-selected="true" data-panel="vp-spain"><span class="zh">西班牙之旅</span><span class="en">The Spain Tour</span></button>
+      <button class="vid-tab" role="tab" aria-selected="false" data-panel="vp-china"><span class="zh">广州基地训练</span><span class="en">Guangzhou Training</span></button>
+    </div>
+
+    <div class="vid-grid rv" id="vp-spain">
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-journey.jpg"><source src="videos/clip-journey.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">出征之旅</span><span class="en">The Journey</span></b><small><span class="zh">机场 · 巴士 · 酒店</span><span class="en">Airport · Bus · Hotel</span></small></div></div>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-behind.jpg"><source src="videos/clip-behind.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">幕后花絮</span><span class="en">Behind The Scenes</span></b><small><span class="zh">更衣室 · 出场</span><span class="en">Locker Room · Walkout</span></small></div></div>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-matchday.jpg"><source src="videos/clip-matchday.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">比赛日</span><span class="en">Match Day</span></b><small><span class="zh">MICFootball7 实战</span><span class="en">MICFootball7 Action</span></small></div></div>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-passion.jpg"><source src="videos/clip-passion.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">热爱与荣耀</span><span class="en">Passion & Pride</span></b><small><span class="zh">技巧 · 庆祝</span><span class="en">Skills · Celebration</span></small></div></div>
+    </div>
+
+    <div class="vid-grid rv" id="vp-china" hidden>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-china-skills.jpg"><source src="videos/china-skills.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">个人技术</span><span class="en">Skills & Technique</span></b><small><span class="zh">控球 · 射门</span><span class="en">Ball Mastery · Finishing</span></small></div></div>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-china-agility.jpg"><source src="videos/china-agility.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">敏捷与速度</span><span class="en">Agility & Speed</span></b><small><span class="zh">梯绳 · 障碍训练</span><span class="en">Ladders · Cone Work</span></small></div></div>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-china-coaching.jpg"><source src="videos/china-coaching.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">教练指导</span><span class="en">Coach's Corner</span></b><small><span class="zh">示范 · 讲解</span><span class="en">Demonstration · Detail</span></small></div></div>
+      <div class="vid-card"><video controls preload="none" playsinline poster="images/poster-china-team.jpg"><source src="videos/china-team.mp4" type="video/mp4"></video><div class="vid-cap"><b><span class="zh">团队精神</span><span class="en">Team Spirit</span></b><small><span class="zh">对抗 · 齐心协力</span><span class="en">1v1 Duels · Togetherness</span></small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 FEES ============ -->
+<section class="section on-white" id="fees">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="sec-num">08</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">班级与价格</span><span class="en">Classes & Fees</span></span>
+        <h2 class="sec-title"><span class="zh">透明的价格，看得见的成长</span><span class="en">Transparent fees, visible progress</span></h2>
+      </div>
+    </div>
+    <div class="price-grid rv">
       <div class="price-card feature">
         <h3><span class="zh">小组班（6人开班）</span><span class="en">Group Classes (from 6 players)</span></h3>
-        <div class="price">¥2,500 <small>/ 10<span class="zh">节课</span><span class="en"> classes</span></small></div>
+        <div class="price">¥2,500 <small>/ 10 <span class="zh">节课</span><span class="en">classes</span></small></div>
         <ul>
           <li><span class="zh">每周一至周五 18:00-20:00</span><span class="en">Monday to Friday, 18:00-20:00</span></li>
-          <li><span class="zh">小班制，保证每个孩子的触球次数</span><span class="en">Small groups - maximum touches per child</span></li>
-          <li><span class="zh">葡萄牙/巴西教练亲自授课</span><span class="en">Coached directly by our Portuguese/Brazilian staff</span></li>
-          <li><span class="zh">定期家长反馈与成长记录</span><span class="en">Regular parent feedback & progress tracking</span></li>
+          <li><span class="zh">小班制，保证每个孩子的触球次数</span><span class="en">Small groups, maximum touches per child</span></li>
+          <li><span class="zh">葡萄牙/巴西教练亲自授课</span><span class="en">Coached directly by our Portuguese and Brazilian staff</span></li>
+          <li><span class="zh">定期家长反馈与成长记录</span><span class="en">Regular parent feedback and progress tracking</span></li>
         </ul>
         <a class="btn btn-gold" href="#contact"><span class="zh">咨询报名</span><span class="en">Enquire Now</span></a>
       </div>
       <div class="price-card">
         <h3><span class="zh">一对一私教</span><span class="en">Private Training (1-on-1)</span></h3>
-        <div class="price">¥8,000 <small>/ 10<span class="zh">节课</span><span class="en"> classes</span></small></div>
+        <div class="price">¥8,000 <small>/ 10 <span class="zh">节课</span><span class="en">classes</span></small></div>
         <ul>
-          <li><span class="zh">完全个性化的训练计划</span><span class="en">Fully individualized training plan</span></li>
+          <li><span class="zh">完全个性化的训练计划</span><span class="en">Fully individualised training plan</span></li>
           <li><span class="zh">针对性补强：控球、射门、速度、比赛阅读</span><span class="en">Targeted work: ball control, finishing, speed, game reading</span></li>
           <li><span class="zh">时间灵活，按家庭日程安排</span><span class="en">Flexible scheduling around your family</span></li>
-          <li><span class="zh">适合备战校队选拔与精英梯队</span><span class="en">Ideal for school-team trials & elite pathway preparation</span></li>
+          <li><span class="zh">适合备战校队选拔与精英梯队</span><span class="en">Ideal for school-team trials and elite pathway preparation</span></li>
         </ul>
         <a class="btn btn-gold" href="#contact"><span class="zh">咨询私教</span><span class="en">Enquire Now</span></a>
       </div>
+      <div class="price-card">
+        <h3><span class="zh">国际赛事之旅</span><span class="en">International Tour</span></h3>
+        <div class="price"><span class="zh">按行程报价</span><span class="en">On application</span></div>
+        <ul>
+          <li><span class="zh">西班牙 2026 已完成：MICFootball7 与 FOOTVIA</span><span class="en">Spain 2026 completed: MICFootball7 and FOOTVIA</span></li>
+          <li><span class="zh">签证信、监护文件与保险由学院处理</span><span class="en">Visa letters, guardianship papers and insurance handled in-house</span></li>
+          <li><span class="zh">每队10-14名球员，2-3名持证教练随行</span><span class="en">10-14 players per squad, 2-3 qualified coaches travelling</span></li>
+          <li><span class="zh">名额有限，需提前规划</span><span class="en">Limited places, requires advance planning</span></li>
+        </ul>
+        <a class="btn btn-gold" href="#contact"><span class="zh">咨询行程</span><span class="en">Ask About The Tour</span></a>
+      </div>
     </div>
-    <p class="note"><span class="zh">* 课程包有效期及退费规则请咨询顾问。名额有限，建议提前预约。</span><span class="en">* Ask our team about package validity and refund policy. Places are limited — early enrolment is recommended.</span></p>
+    <p class="note rv"><span class="zh">* 课程包有效期及退费规则请咨询顾问。名额有限，建议提前预约。</span><span class="en">* Ask our team about package validity and refund policy. Places are limited, early enrolment is recommended.</span></p>
   </div>
 </section>
 
-<!-- WIDE PHOTO BAND (full-width break, Bali7s/JOOSPORTS style)
-     Put a wide horizontal photo (1920px wide works well) at images/roots-wide.jpg
-     If missing, the band shows as dark green with the quote - still looks good. -->
-<div class="band">
+<!-- ============ 09 FAQ ============ -->
+<section class="section" id="faq">
   <div class="container">
-    <p><span class="zh">「先爱上足球，<span class="gold">再成为球员</span>。」</span>
-       <span class="en">"Fall in love with the game first - <span class="gold">then become a player</span>."</span></p>
-  </div>
-</div>
-
-<!-- COACHES -->
-<section id="coaches" class="coaches">
-  <div class="container">
-    <div class="sec-label"><span class="zh">教练团队</span><span class="en">Founders & Coaches</span></div>
-    <h2 class="sec-title"><span class="zh">真正的欧洲与南美职业背景</span><span class="en">Genuine European & South American pedigree</span></h2>
-    <div class="coach-grid">
-      <div class="coach">
-        <div class="avatar">ID</div>
-        <div>
-          <h3><span class="zh">Idris 教练（葡萄牙）</span><span class="en">Coach Idris (Portugal)</span></h3>
-          <div class="role"><span class="zh">联合创始人 · 主教练</span><span class="en">Co-Founder · Head Coach</span></div>
-          <p><span class="zh">葡萄牙职业青训教练，曾在法国、韩国执教，2015年起扎根中国。中文流利，深刻理解中国家庭的教育期望，是孩子与家长都信任的沟通桥梁。</span>
-          <span class="en">Portuguese youth coach with professional experience in France and South Korea, based in China since 2015. Fluent in Mandarin, he bridges European football culture and the expectations of Chinese families.</span></p>
-        </div>
-      </div>
-      <div class="coach">
-        <div class="avatar">RP</div>
-        <div>
-          <h3><span class="zh">Rodrigo Paixão Mesquita 教练（巴西）</span><span class="en">Coach Rodrigo Paixão Mesquita (Brazil)</span></h3>
-          <div class="role"><span class="zh">联合创始人 · 技术总监</span><span class="en">Co-Founder · Technical Director</span></div>
-          <p><span class="zh">出生于巴西圣保罗的职业前腰球员，从国际体育俱乐部（Internacional）青训体系出道，随后代表国际队与菲格伦斯竞技（Figueirense）征战巴西甲级联赛，并三次夺得南里奥格兰德州联赛冠军（2003、2004、2005年）。自2009年起，他在中国职业联赛效力长达九年，先后效力沈阳东进、安徽九方、哈尔滨毅腾、贵州智诚与浙江毅腾等俱乐部，随后转型出任中国职业乙级俱乐部助理教练。他将地道的巴西技术流打法与职业标准，带进根源足球学院的每一堂训练课。</span>
-          <span class="en">Born in São Paulo, Brazil, Rodrigo came through Sport Club Internacional's youth academy and went on to play in Brazil's top flight for Internacional and Figueirense, winning the Campeonato Gaúcho three times (2003, 2004, 2005). From 2009 he built a nine-year career in Chinese professional football with clubs including Shenyang Dongjin, Anhui Jiufang, Harbin Yiteng, Guizhou Zhicheng and Zhejiang Yiteng, before transitioning into coaching as assistant coach of a Chinese professional second-division club. He brings authentic Brazilian technical methodology and professional standards to every Roots session.</span></p>
-        </div>
+    <div class="sec-head rv">
+      <div class="sec-num">09</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">家长常见问题</span><span class="en">For Parents</span></span>
+        <h2 class="sec-title"><span class="zh">家长最常问的问题</span><span class="en">Questions parents ask</span></h2>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- INTERNATIONAL -->
-<section id="intl" class="intl">
-  <div class="container">
-    <div class="sec-label"><span class="zh">国际赛事</span><span class="en">International Stage</span></div>
-    <h2 class="sec-title"><span class="zh">让孩子站上国际赛场</span><span class="en">Taking our players to the world</span></h2>
-    <div class="intl-grid">
-      <div class="intl-card">
-        <div class="flag">🇪🇸</div>
-        <h3><span class="zh">西班牙 2026</span><span class="en">Spain 2026</span></h3>
-        <p><span class="zh">MICFootball7 与 FOOTVIA 国际青少年锦标赛--与欧洲豪门青训同场竞技。</span><span class="en">MICFootball7 & FOOTVIA international youth tournaments - competing alongside Europe's top academies.</span></p>
-      </div>
-      <div class="intl-card">
-        <div class="flag">🌏</div>
-        <h3><span class="zh">亚洲巡回赛计划</span><span class="en">Asia Tour Program</span></h3>
-        <p><span class="zh">新加坡 JSSL 7s、日本横滨、泰国曼谷等亚洲顶级青少年赛事的参赛规划正在进行中。</span><span class="en">Planned entries in Asia's top youth events: JSSL 7s Singapore, Yokohama (Japan), Bangkok and more.</span></p>
-      </div>
-      <div class="intl-card">
-        <div class="flag">🔭</div>
-        <h3><span class="zh">未来：球探网络</span><span class="en">Next: Scouting Network</span></h3>
-        <p><span class="zh">建设面向全中国的青少年球探体系，为有天赋的孩子创造海外发展机会。</span><span class="en">Building a China-wide scouting branch to create overseas opportunities for talented young players.</span></p>
-      </div>
+    <div class="faq rv">
+      <details>
+        <summary><span class="zh">我的孩子适合哪个班？</span><span class="en">Which group is right for my child?</span></summary>
+        <div class="ans"><span class="zh">我们按年龄与水平分组。请通过微信联系我们，说明孩子的年龄与足球经验，我们会为您推荐合适的班级。没有任何足球基础也完全没问题，启蒙体系正是为此设计的。</span><span class="en">Groups are organised by age and level. Message us on WeChat with your child's age and football experience and we will advise the right group. No previous experience is needed, the Discovery pathway is built exactly for that.</span></div>
+      </details>
+      <details>
+        <summary><span class="zh">训练用什么语言？</span><span class="en">What language are sessions taught in?</span></summary>
+        <div class="ans"><span class="zh">训练以英语和中文进行。我们的教练可用英语、葡萄牙语、法语和中文直接沟通，孩子在运动中自然接触英语环境。</span><span class="en">Sessions run in English and Mandarin. Our coaches speak English, Portuguese, French and Mandarin directly, so children pick up English naturally through sport.</span></div>
+      </details>
+      <details>
+        <summary><span class="zh">在哪里训练？</span><span class="en">Where do you train?</span></summary>
+        <div class="ans"><span class="zh">主训练场地为 Arena Roots，位于广州。具体地址与交通方式请通过微信咨询。</span><span class="en">Our home venue is Arena Roots in Guangzhou. Message us on WeChat for the exact address and directions.</span></div>
+      </details>
+      <details>
+        <summary><span class="zh">课程包包含什么？</span><span class="en">What does a course package include?</span></summary>
+        <div class="ans"><span class="zh">小组班课程包为10节课，每节课由葡萄牙或巴西教练亲自带训，并包含定期的家长反馈与成长记录。有效期与退费规则请咨询顾问。</span><span class="en">A group package is 10 sessions, each led directly by our Portuguese or Brazilian coaches, with regular parent feedback and progress tracking. Ask our team about validity and refund policy.</span></div>
+      </details>
+      <details>
+        <summary><span class="zh">孩子可以参加国际赛事吗？</span><span class="en">Can my child travel to international tournaments?</span></summary>
+        <div class="ans"><span class="zh">可以。2026年6月我们已带队赴西班牙参加 MICFootball7 与 FOOTVIA 国际锦标赛。签证信、监护文件与保险均由学院内部处理。名额有限，需提前规划。</span><span class="en">Yes. In June 2026 we took a squad to Spain for MICFootball7 and the FOOTVIA International Tournament. Visa letters, guardianship documents and insurance are handled in-house. Places are limited and require advance planning.</span></div>
+      </details>
+      <details>
+        <summary><span class="zh">我们学校想开设足球课程，如何合作？</span><span class="en">Our school wants a football program. How do we start?</span></summary>
+        <div class="ans"><span class="zh">我们与学校合作开设课后班与 ECA / CCA 课程。学院为正式注册的法律主体，可签署协议并开具发票。请发送邮件至 rootsfootballacademy@proton.me，我们48小时内回复。</span><span class="en">We run after-school and ECA / CCA programs with schools. Roots is a registered legal entity able to sign agreements and issue invoices (发票). Email rootsfootballacademy@proton.me and we will reply within 48 hours.</span></div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="gallery">
+<!-- ============ 10 CONTACT ============ -->
+<section class="section on-white" id="contact">
   <div class="container">
-    <div class="sec-label"><span class="zh">影像记录</span><span class="en">Gallery</span></div>
-    <h2 class="sec-title"><span class="zh">训练与比赛瞬间</span><span class="en">Training & Match Moments</span></h2>
-
-    <!-- ============================================================
-         HOW TO ADD YOUR PHOTOS (carousel, JOOSPORTS style):
-         1. Create a folder called  images  next to this HTML file.
-         2. Put horizontal photos inside, named: roots-1.jpg ... roots-8.jpg
-            (JPG, under 300 KB each - compress at tinypng.com)
-         3. They appear automatically. Scroll sideways or use the arrows.
-         To add more, copy one <div class="car-item"> block and change
-         the number and caption. Captions follow the JOOSPORTS style:
-         a short title + small label underneath.
-         ============================================================ -->
-    <div class="car-shell">
-      <button class="car-btn car-prev" onclick="carScroll(-1)" aria-label="Previous">&#10094;</button>
-      <button class="car-btn car-next" onclick="carScroll(1)" aria-label="Next">&#10095;</button>
-      <div class="car-track" id="carTrack">
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-1.jpg" target="_blank"><img src="images/roots-1.jpg" alt="Roots training" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 1<br>images/roots-1.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">无所畏惧</span><span class="en">Fearless</span><small>MICFootball7 2026</small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-2.jpg" target="_blank"><img src="images/roots-2.jpg" alt="Roots match day" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 2<br>images/roots-2.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">赛前热身</span><span class="en">Ready For Battle</span><small><span class="zh">比赛日</span><span class="en">Match Day</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-3.jpg" target="_blank"><img src="images/roots-3.jpg" alt="Roots in Spain" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 3<br>images/roots-3.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">胜利时刻</span><span class="en">Celebration Time</span><small><span class="zh">国际赛事 2026</span><span class="en">International 2026</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-4.jpg" target="_blank"><img src="images/roots-4.jpg" alt="Roots coaching" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 4<br>images/roots-4.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">代表中国出征</span><span class="en">Flying The Flag</span><small><span class="zh">西班牙之旅</span><span class="en">Roots In Spain</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-5.jpg" target="_blank"><img src="images/roots-5.jpg" alt="Roots Discovery" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 5<br>images/roots-5.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">巨型球场之梦</span><span class="en">Big Stadium Dreams</span><small><span class="zh">足球文化之旅</span><span class="en">Culture Trip</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-6.jpg" target="_blank"><img src="images/roots-6.jpg" alt="Roots team spirit" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 6<br>images/roots-6.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">做客赫罗纳</span><span class="en">Girona FC Experience</span><small><span class="zh">俱乐部交流</span><span class="en">Club Visit</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-7.jpg" target="_blank"><img src="images/roots-7.jpg" alt="Roots future stars" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 7<br>images/roots-7.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">公平竞赛</span><span class="en">Fair Play</span><small><span class="zh">体育精神</span><span class="en">Respect</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-8.jpg" target="_blank"><img src="images/roots-8.jpg" alt="Roots celebration" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 8<br>images/roots-8.jpg</div>')"></a>
-          <div class="car-cap"><span class="zh">名师指导</span><span class="en">Masters At Work</span><small><span class="zh">教练团队</span><span class="en">Coaching</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-9.jpg" target="_blank"><img src="images/roots-9.jpg" alt="Roots with opponents" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 9</div>')"></a>
-          <div class="car-cap"><span class="zh">以球会友</span><span class="en">Friends Through Football</span><small><span class="zh">赛后合影</span><span class="en">Post-Match</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-10.jpg" target="_blank"><img src="images/roots-10.jpg" alt="MICFootball7 banner" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 10</div>')"></a>
-          <div class="car-cap"><span class="zh">国际大赛</span><span class="en">On The Big Stage</span><small>MICFootball7 2026</small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-11.jpg" target="_blank"><img src="images/roots-11.jpg" alt="Girona stadium" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 11</div>')"></a>
-          <div class="car-cap"><span class="zh">朝圣蒙蒂利维</span><span class="en">Estadi Montilivi</span><small><span class="zh">赫罗纳主场</span><span class="en">Girona FC Stadium</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-12.jpg" target="_blank"><img src="images/roots-12.jpg" alt="Roots team group" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 12</div>')"></a>
-          <div class="car-cap"><span class="zh">根源大家庭</span><span class="en">The Roots Family</span><small><span class="zh">全队合影</span><span class="en">Team Photo</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-13.jpg" target="_blank"><img src="images/roots-13.jpg" alt="Tunnel walk" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 13</div>')"></a>
-          <div class="car-cap"><span class="zh">通往赛场</span><span class="en">The Tunnel</span><small><span class="zh">出场时刻</span><span class="en">Walkout</span></small></div>
-        </div>
-        <div class="car-item">
-          <a class="car-photo" href="images/roots-14.jpg" target="_blank"><img src="images/roots-14.jpg" alt="Shot on goal" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=g-empty>Photo 14</div>')"></a>
-          <div class="car-cap"><span class="zh">射门瞬间</span><span class="en">The Strike</span><small><span class="zh">比赛瞬间</span><span class="en">Match Action</span></small></div>
-        </div>
+    <div class="sec-head rv">
+      <div class="sec-num">10</div>
+      <div class="sh-body">
+        <span class="eyebrow"><span class="zh">联系我们</span><span class="en">Contact</span></span>
+        <h2 class="sec-title"><span class="zh">咨询课程 · 预约报名</span><span class="en">Enquire and enrol</span></h2>
       </div>
     </div>
-
-    <!-- ============================================================
-         VIDEO - two options, keep ONE and delete the other:
-
-         OPTION A (recommended for international audience): YouTube.
-         Upload your highlight video to YouTube, click Share > Embed,
-         copy the code and replace VIDEO_ID below.
-         Note: YouTube does not load inside mainland China.
-
-         OPTION B (works in China): a local MP4 file.
-         Put your video file next to this HTML as  videos/roots-highlights.mp4
-         (keep it under ~50 MB), delete the iframe block and un-comment
-         the <video> block below it.
-         ============================================================ -->
-    <div style="margin-top:44px">
-      <h3 style="text-align:center;color:var(--green);margin-bottom:18px">
-        <span class="zh">学院宣传片</span><span class="en">Academy Highlights</span></h3>
-      <div class="video-wrap">
-        <!-- Home-base highlight reel from our Guangzhou training center (local file - plays in China too).
-             To switch to YouTube later, replace this <video> block with a YouTube embed iframe. -->
-        <video controls preload="metadata" poster="images/poster-academy-highlights.jpg">
-          <source src="videos/roots-academy-highlights-wide.mp4" type="video/mp4">
-        </video>
+    <div class="contact-grid rv">
+      <div class="contact-col wechat">
+        <div class="qr-wrap">
+          <img src="images/wechat-qr.png" alt="Roots Football Academy WeChat QR code 微信二维码">
+          <b><span class="zh">扫码添加，回复"课程"</span><span class="en">Scan and message "COURSE"</span></b>
+          <span class="zh">48小时内为您详细介绍课程与名额</span><span class="en">We reply within 48 hours with course details and availability</span>
+          <div><span class="wechat-id">WeChat · Idris_b</span></div>
+        </div>
+        <div style="border-top:1px solid var(--line-dark);padding-top:8px">
+          <div class="ci-row" style="border-color:var(--line-dark)"><div class="ci">📍</div><div><b><span class="zh">训练场地</span><span class="en">Venue</span></b><div class="v" style="color:rgba(244,241,232,.86)">Arena Roots<span class="zh">，中国广州</span><span class="en">, Guangzhou, China</span></div></div></div>
+          <div class="ci-row" style="border-color:var(--line-dark)"><div class="ci">🕐</div><div><b><span class="zh">训练时间</span><span class="en">Training Times</span></b><div class="v" style="color:rgba(244,241,232,.86)"><span class="zh">每周一至周五 18:00–20:00</span><span class="en">Monday to Friday, 18:00–20:00</span></div></div></div>
+          <div class="ci-row" style="border-color:var(--line-dark)"><div class="ci">✉️</div><div><b>Email</b><div class="v" style="color:rgba(244,241,232,.86)">rootsfootballacademy@proton.me</div></div></div>
+        </div>
       </div>
-      <p style="text-align:center;color:var(--grey);font-size:.9rem;margin-top:12px">
-        <span class="zh">日常训练实录 - 广州根源足球学院训练基地</span>
-        <span class="en">Everyday training - Roots Football Academy, Guangzhou base</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section id="videos" class="vids">
-  <div class="container">
-    <div class="sec-label"><span class="zh">视频专区</span><span class="en">Videos</span></div>
-    <h2 class="sec-title"><span class="zh">西班牙之旅 - 完整故事</span><span class="en">The Spain Tour - The Full Story</span></h2>
-    <div class="vid-grid">
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-journey.jpg"><source src="videos/clip-journey.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">出征之旅</span><span class="en">The Journey</span><small><span class="zh">机场 · 巴士 · 酒店</span><span class="en">Airport · Bus · Hotel</span></small></div>
-      </div>
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-behind.jpg"><source src="videos/clip-behind.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">幕后花絮</span><span class="en">Behind The Scenes</span><small><span class="zh">更衣室 · 出场</span><span class="en">Locker Room · Walkout</span></small></div>
-      </div>
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-matchday.jpg"><source src="videos/clip-matchday.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">比赛日</span><span class="en">Match Day</span><small><span class="zh">MICFootball7 实战</span><span class="en">MICFootball7 Action</span></small></div>
-      </div>
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-passion.jpg"><source src="videos/clip-passion.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">热爱与荣耀</span><span class="en">Passion & Pride</span><small><span class="zh">技巧 · 庆祝</span><span class="en">Skills · Celebration</span></small></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS - CHINA TRAINING (separate section, not mixed with the Spain Tour videos above) -->
-<section id="videos-china" class="vids" style="background:var(--cream)">
-  <div class="container">
-    <div class="sec-label"><span class="zh">中国训练营</span><span class="en">Training In China</span></div>
-    <h2 class="sec-title"><span class="zh">广州基地 - 日常训练实录</span><span class="en">Guangzhou Base - Everyday Training</span></h2>
-    <div class="vid-grid">
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-china-skills.jpg"><source src="videos/china-skills.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">个人技术</span><span class="en">Skills & Technique</span><small><span class="zh">控球 · 射门</span><span class="en">Ball Mastery · Finishing</span></small></div>
-      </div>
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-china-agility.jpg"><source src="videos/china-agility.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">敏捷与速度</span><span class="en">Agility & Speed</span><small><span class="zh">梯绳 · 障碍训练</span><span class="en">Ladders · Cone Work</span></small></div>
-      </div>
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-china-coaching.jpg"><source src="videos/china-coaching.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">教练指导</span><span class="en">Coach's Corner</span><small><span class="zh">示范 · 讲解</span><span class="en">Demonstration · Detail</span></small></div>
-      </div>
-      <div class="vid-card">
-        <video controls preload="none" poster="images/poster-china-team.jpg"><source src="videos/china-team.mp4" type="video/mp4"></video>
-        <div class="vid-cap"><span class="zh">团队精神</span><span class="en">Team Spirit</span><small><span class="zh">对抗 · 齐心协力</span><span class="en">1v1 Duels · Togetherness</span></small></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARTNERS / CREDENTIALS -->
-<section id="partners" class="branches">
-  <div class="container">
-    <div class="sec-label"><span class="zh">合作伙伴专区</span><span class="en">For Tournament Organizers & Partners</span></div>
-    <h2 class="sec-title"><span class="zh">一支随时可以出征的国际化队伍</span><span class="en">A travel-ready, professionally run academy</span></h2>
-    <p style="max-width:760px;margin-bottom:34px">
-      <span class="zh">如果您是赛事主办方、学校或海外俱乐部，以下是与我们合作所需的核心信息。</span>
-      <span class="en">If you are a tournament organizer, school or overseas club, here is the essential information for working with us. We answer partnership enquiries within 48 hours, in English, Portuguese, French or Chinese.</span>
-    </p>
-    <div class="phil-grid">
-      <div class="phil-card">
-        <h3><span class="zh">🏛️ 正规注册机构</span><span class="en">🏛️ Registered & Accountable</span></h3>
-        <p><span class="zh">广州普巴足球俱乐部有限公司 - 在中国正式注册的足球俱乐部，具备签署合作协议与组织跨境行程的法律主体资格。</span>
-        <span class="en">Officially registered in China as <b>Guangzhou Puba Football Club Co., Ltd.</b> - a legal entity able to sign agreements, invoice, and organize cross-border team travel with parental consent documentation.</span></p>
-      </div>
-      <div class="phil-card">
-        <h3><span class="zh">✈️ 国际参赛经验</span><span class="en">✈️ International Tournament Experience</span></h3>
-        <p><span class="zh">2026年6月率队赴西班牙参加 MICFootball7 与 FOOTVIA 国际锦标赛，具备完整的签证、监护与保险文件流程经验。</span>
-        <span class="en">In June 2026 we took our players to Spain for <b>MICFootball7 '26 and the FOOTVIA International Tournament</b> - with full experience in visa support letters, guardianship documents and travel insurance procedures.</span></p>
-      </div>
-      <div class="phil-card">
-        <h3><span class="zh">🗣️ 多语言团队</span><span class="en">🗣️ Multilingual Staff</span></h3>
-        <p><span class="zh">教练团队可用英语、葡萄牙语、法语和中文直接沟通，无需翻译中介。</span>
-        <span class="en">Our coaching staff communicates directly in <b>English, Portuguese, French and Mandarin Chinese</b> - no intermediaries or translators needed at any stage.</span></p>
-      </div>
-      <div class="phil-card">
-        <h3><span class="zh">👥 参赛队伍构成</span><span class="en">👥 Standard Travel Delegation</span></h3>
-        <p><span class="zh">标准出行编制：每队10-14名球员 + 2-3名持证教练 + 随行家长。所有球员均有出生证明文件与保险。</span>
-        <span class="en">Standard delegation: <b>10-14 players per squad, 2-3 qualified coaches</b>, plus accompanying parents. All players travel with verified date-of-birth documents and insurance cover.</span></p>
-      </div>
-    </div>
-    <div style="margin-top:36px;text-align:center">
-      <a class="btn btn-gold" href="mailto:rootsfootballacademy@proton.me?subject=Partnership%20Enquiry%20-%20Roots%20Football%20Academy">
-        <span class="zh">发送合作邮件</span><span class="en">Send a Partnership Enquiry</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="sec-label"><span class="zh">联系我们</span><span class="en">Contact Us</span></div>
-    <h2 class="sec-title"><span class="zh">咨询课程 · 预约报名</span><span class="en">Enquire & Enrol</span></h2>
-    <div class="contact-grid">
-      <div>
-        <div class="contact-item"><div class="ci">📍</div><div><b><span class="zh">训练地点</span><span class="en">Location</span></b><span class="zh">中国广州市（具体场地请咨询顾问）</span><span class="en">Guangzhou, China (ask us for venue details)</span></div></div>
-        <div class="contact-item"><div class="ci">💬</div><div><b><span class="zh">微信咨询</span><span class="en">WeChat</span></b><span class="zh">添加学院微信：<strong>idris_b</strong></span><span class="en">Add our academy WeChat: <strong>idris_b</strong></span></div></div>
-        <div class="contact-item"><div class="ci">✉️</div><div><b>Email</b>rootsfootballacademy@proton.me</div></div>
-        <div class="contact-item"><div class="ci">🕐</div><div><b><span class="zh">训练时间</span><span class="en">Training Times</span></b><span class="zh">每周一至周五 18:00–20:00（其他时段可咨询）</span><span class="en">Monday to Friday, 18:00–20:00 (other slots on request)</span></div></div>
-        
-        <!-- Contact Form -->
-        <form action="https://formspree.io/f/xqapzvqe" method="POST" style="margin-top:32px;background:var(--white);padding:28px;border-radius:14px;box-shadow:0 4px 18px rgba(20,60,43,.08);">
-          <h3 style="color:var(--green);margin-bottom:16px;font-size:1.1rem;"><span class="zh">在线预约表单</span><span class="en">Online Booking Form</span></h3>
-          <div style="margin-bottom:14px;">
-            <input type="text" name="parent_name" placeholder="Parent's Name / 家长姓名" required style="width:100%;padding:12px 14px;border:2px solid #E5E0D2;border-radius:8px;font-size:.95rem;font-family:inherit;">
-          </div>
-          <div style="margin-bottom:14px;">
-            <input type="text" name="player_name" placeholder="Player's Name / 学员姓名" required style="width:100%;padding:12px 14px;border:2px solid #E5E0D2;border-radius:8px;font-size:.95rem;font-family:inherit;">
-          </div>
-          <div style="margin-bottom:14px;">
-            <input type="tel" name="phone" placeholder="Phone / 手机号码" required style="width:100%;padding:12px 14px;border:2px solid #E5E0D2;border-radius:8px;font-size:.95rem;font-family:inherit;">
-          </div>
-          <div style="margin-bottom:14px;">
-            <select name="program" required style="width:100%;padding:12px 14px;border:2px solid #E5E0D2;border-radius:8px;font-size:.95rem;font-family:inherit;background:white;">
-              <option value="">Select Program / 选择课程</option>
-              <option value="group">Group Class (from 6 players) / 小组班</option>
-              <option value="private">Private Training / 一对一私教</option>
-            </select>
-          </div>
-          <div style="margin-bottom:14px;">
-            <textarea name="message" placeholder="Message / 留言（可选）" rows="3" style="width:100%;padding:12px 14px;border:2px solid #E5E0D2;border-radius:8px;font-size:.95rem;font-family:inherit;resize:vertical;"></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width:100%;border:none;cursor:pointer;"><span class="zh">提交预约</span><span class="en">Submit Booking</span></button>
+      <div class="contact-col">
+        <h3 style="color:var(--green);font-size:1.1rem;font-weight:800;margin-bottom:20px"><span class="zh">在线预约表单</span><span class="en">Online Booking Form</span></h3>
+        <form action="https://formspree.io/f/xqapzvqe" method="POST">
+          <label for="f-parent"><span class="zh">家长姓名</span><span class="en">Parent's Name</span></label>
+          <input id="f-parent" type="text" name="parent_name" required autocomplete="name">
+          <label for="f-player"><span class="zh">学员姓名</span><span class="en">Player's Name</span></label>
+          <input id="f-player" type="text" name="player_name" required>
+          <label for="f-phone"><span class="zh">手机号码</span><span class="en">Phone</span></label>
+          <input id="f-phone" type="tel" name="phone" required autocomplete="tel">
+          <label for="f-prog"><span class="zh">选择课程</span><span class="en">Program</span></label>
+          <select id="f-prog" name="program" required>
+            <option value="">— <span class="zh">请选择</span>Select —</option>
+            <option value="group">Group Class (from 6 players) / 小组班</option>
+            <option value="private">Private Training / 一对一私教</option>
+            <option value="tour">International Tour / 国际赛事之旅</option>
+            <option value="school">School Program / 学校合作</option>
+          </select>
+          <label for="f-msg"><span class="zh">留言（可选）</span><span class="en">Message (optional)</span></label>
+          <textarea id="f-msg" name="message" rows="4"></textarea>
+          <button type="submit" class="btn btn-gold"><span class="zh">提交预约</span><span class="en">Submit Booking</span></button>
         </form>
       </div>
-      <div class="qr-box">
-        <img class="qr-img" src="images/wechat-qr.png" alt="Roots Football Academy WeChat QR code 微信二维码">
-        <b><span class="zh">扫码添加，回复"课程"</span><span class="en">Scan & message "COURSE"</span></b><br>
-        <span class="zh">48小时内为您详细介绍课程与名额</span><span class="en">We'll get back to you within 48 hours with course details</span>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+</main>
+
+<!-- ============ FOOTER ============ -->
 <footer>
   <div class="container foot">
-    <div><b>ROOTS FOOTBALL ACADEMY <span class="zh">根源足球学院</span></b><br>
-      <span class="zh">广州普巴足球俱乐部有限公司</span><span class="en">Guangzhou Puba Football Club Co., Ltd.</span></div>
-    <div><span class="zh">葡萄牙 × 巴西 × 中国 · 技术 · 团队 · 纪律 · 热爱</span><span class="en">Portugal × Brazil × China · Technique · Teamwork · Discipline · Passion</span><br>
-      © 2026 Roots Football Academy</div>
+    <div>
+      <b>ROOTS FOOTBALL ACADEMY <span class="zh">根源足球学院</span></b><br>
+      <span class="zh">广州普巴足球俱乐部有限公司</span><span class="en">Guangzhou Puba Football Club Co., Ltd.</span>
+      <div class="fl">
+        <a href="#partners"><span class="zh">学校与合作</span><span class="en">Schools & Partners</span></a>
+        <a href="#pathways"><span class="zh">课程体系</span><span class="en">Pathways</span></a>
+        <a href="#fees"><span class="zh">价格</span><span class="en">Fees</span></a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact"><span class="zh">联系</span><span class="en">Contact</span></a>
+      </div>
+    </div>
+    <div>
+      <span class="zh">葡萄牙 × 巴西 × 中国 · 技术 · 团队 · 纪律 · 热爱</span>
+      <span class="en">Portugal × Brazil × China · Technique · Teamwork · Discipline · Passion</span>
+      <small>© 2026 Roots Football Academy · rootsfootballacademy@proton.me</small>
+    </div>
   </div>
 </footer>
 
+<!-- ============ LIGHTBOX ============ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next">&#10095;</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
 <script>
-function toggleLang(){
-  var h=document.documentElement;
-  h.dataset.lang = (h.dataset.lang==="zh") ? "en" : "zh";
-  h.lang = h.dataset.lang==="zh" ? "zh" : "en";
-}
-function carScroll(dir){
-  var t=document.getElementById("carTrack");
-  t.scrollBy({left: dir*360, behavior:"smooth"});
-}
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- language toggle ---- */
+  window.toggleLang = function(){
+    var h = document.documentElement;
+    h.dataset.lang = (h.dataset.lang === "zh") ? "en" : "zh";
+    h.lang = h.dataset.lang;
+    try{ localStorage.setItem("roots-lang", h.dataset.lang); }catch(e){}
+  };
+  try{
+    var saved = localStorage.getItem("roots-lang");
+    if(saved){ document.documentElement.dataset.lang = saved; document.documentElement.lang = saved; }
+  }catch(e){}
+
+  /* ---- mobile nav ---- */
+  var burger = document.getElementById("burger"),
+      navlinks = document.getElementById("navlinks");
+  burger.addEventListener("click", function(){
+    var open = navlinks.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  navlinks.addEventListener("click", function(e){
+    if(e.target.closest("a")){
+      navlinks.classList.remove("open");
+      burger.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ---- scroll progress ---- */
+  var prog = document.getElementById("prog"), ticking = false;
+  function updateProg(){
+    var h = document.documentElement,
+        max = h.scrollHeight - h.clientHeight;
+    prog.style.width = max > 0 ? ((h.scrollTop / max) * 100) + "%" : "0%";
+    ticking = false;
+  }
+  window.addEventListener("scroll", function(){
+    if(!ticking){ window.requestAnimationFrame(updateProg); ticking = true; }
+  }, {passive:true});
+
+  /* ---- reveal on scroll ---- */
+  var revealables = document.querySelectorAll(".rv");
+  if(reduced || !("IntersectionObserver" in window)){
+    revealables.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry, i){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          setTimeout(function(){ el.classList.add("in"); }, i * 70);
+          io.unobserve(el);
+        }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.06});
+    revealables.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- count-up on the ledger ---- */
+  var counters = document.querySelectorAll("[data-count]");
+  if(!reduced && "IntersectionObserver" in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target,
+            target = parseInt(el.dataset.count, 10),
+            suffix = el.dataset.suffix || "",
+            start = null, dur = 1100;
+        function step(ts){
+          if(!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1),
+              eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        cio.unobserve(el);
+      });
+    }, {threshold:0.5});
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+
+  /* ---- gallery carousel ---- */
+  window.carScroll = function(dir){
+    var t = document.getElementById("carTrack");
+    t.scrollBy({left: dir * Math.min(t.clientWidth * 0.8, 740), behavior: reduced ? "auto" : "smooth"});
+  };
+
+  /* ---- video tabs ---- */
+  var tabs = document.querySelectorAll(".vid-tab");
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      tabs.forEach(function(t){
+        t.setAttribute("aria-selected","false");
+        document.getElementById(t.dataset.panel).hidden = true;
+      });
+      tab.setAttribute("aria-selected","true");
+      var panel = document.getElementById(tab.dataset.panel);
+      panel.hidden = false;
+      panel.classList.add("in");
+      panel.querySelectorAll("video").forEach(function(v){ v.pause(); });
+    });
+  });
+
+  /* ---- lightbox ---- */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".lb-link")),
+      lb = document.getElementById("lb"),
+      lbImg = document.getElementById("lbImg"),
+      lbCap = document.getElementById("lbCap"),
+      idx = 0, lastFocus = null;
+
+  function show(i){
+    idx = (i + links.length) % links.length;
+    var a = links[idx];
+    lbImg.src = a.getAttribute("href");
+    lbImg.alt = a.querySelector("img") ? a.querySelector("img").alt : "";
+    lbCap.textContent = (a.dataset.cap || "") + "  ·  " + (idx + 1) + " / " + links.length;
+  }
+  function open(i){
+    lastFocus = document.activeElement;
+    show(i);
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("lbClose").focus();
+  }
+  function close(){
+    lb.classList.remove("open");
+    lbImg.src = "";
+    document.body.style.overflow = "";
+    if(lastFocus) lastFocus.focus();
+  }
+  links.forEach(function(a, i){
+    a.addEventListener("click", function(e){ e.preventDefault(); open(i); });
+  });
+  document.getElementById("lbClose").addEventListener("click", close);
+  document.getElementById("lbPrev").addEventListener("click", function(){ show(idx - 1); });
+  document.getElementById("lbNext").addEventListener("click", function(){ show(idx + 1); });
+  lb.addEventListener("click", function(e){ if(e.target === lb) close(); });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") close();
+    else if(e.key === "ArrowLeft") show(idx - 1);
+    else if(e.key === "ArrowRight") show(idx + 1);
+  });
+  /* touch swipe */
+  var tsX = 0;
+  lb.addEventListener("touchstart", function(e){ tsX = e.changedTouches[0].clientX; }, {passive:true});
+  lb.addEventListener("touchend", function(e){
+    var dx = e.changedTouches[0].clientX - tsX;
+    if(Math.abs(dx) > 55) show(idx + (dx < 0 ? 1 : -1));
+  }, {passive:true});
+
+  /* ---- pause hero video when off-screen, saves battery and data ---- */
+  var hero = document.querySelector(".hero-video video");
+  if(hero && "IntersectionObserver" in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ var p = hero.play(); if(p) p.catch(function(){}); }
+        else hero.pause();
+      });
+    }, {threshold:0.08}).observe(hero);
+  }
+})();
 </script>
 </body>
 </html>
