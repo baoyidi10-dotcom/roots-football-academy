@@ -249,26 +249,46 @@ nav{position:sticky;top:0;z-index:100;background:var(--green);border-bottom:1px 
 .spain-strip a:hover img,.spain-strip a:focus-visible img{transform:scale(1.04)}
 
 /* ---------- COACHES ---------- */
-.coach{background:var(--white);padding:clamp(26px,3.4vw,44px);display:grid;gap:22px}
-@media(min-width:600px){.coach{grid-template-columns:auto 1fr;align-items:start}}
+/* One full-width block per coach: tall portrait left, credentials right,
+   closing on a four-column stat ledger. */
+.coach{display:grid;gap:clamp(20px,3vw,44px);padding:clamp(28px,3.6vw,48px) 0;border-top:1px solid var(--line)}
+@media(min-width:820px){.coach{grid-template-columns:minmax(240px,1fr) 2fr;align-items:start}}
 /* Portrait slot. Shows the initials plate until a real headshot exists at
    images/coach-idris.jpg or images/coach-rodrigo.jpg, then the photo covers it. */
 .coach .avatar{
-  position:relative;width:clamp(96px,13vw,132px);aspect-ratio:3/4;background:var(--green);
+  position:relative;aspect-ratio:3/4;background:var(--green);
   color:var(--gold2);display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;font-weight:800;letter-spacing:.04em;flex-shrink:0;overflow:hidden;
+  font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:.04em;overflow:hidden;
 }
 .coach .avatar img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   filter:grayscale(1) contrast(1.05);transition:filter .5s;
 }
 .coach:hover .avatar img{filter:grayscale(0) contrast(1)}
-.coach h3{font-size:clamp(1.1rem,1.7vw,1.35rem);color:var(--green);font-weight:800;letter-spacing:-.015em}
-.coach .role{font-size:.72rem;letter-spacing:.16em;color:var(--gold);font-weight:700;margin:7px 0 14px;text-transform:uppercase}
-.coach p{color:var(--grey);font-size:.92rem}
-.coach .creds{list-style:none;margin-top:16px;border-top:1px solid var(--line)}
-.coach .creds li{font-size:.83rem;color:var(--ink);padding:9px 0;border-bottom:1px solid var(--line)}
-.coach .creds b{color:var(--green);font-weight:700}
+.coach .lic{
+  position:absolute;left:0;bottom:0;background:var(--gold);color:var(--green2);
+  font-size:.68rem;font-weight:800;letter-spacing:.16em;padding:9px 16px;z-index:2;
+}
+.coach .role{font-size:.72rem;letter-spacing:.16em;color:var(--gold);font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.coach h3{font-size:clamp(1.5rem,3vw,2.3rem);color:var(--green);font-weight:800;letter-spacing:-.026em;line-height:1.1}
+[data-lang="zh"] .coach h3{letter-spacing:-.005em}
+.coach .sub{color:var(--grey);font-size:.95rem;margin:8px 0 20px}
+.coach p{color:var(--ink);font-size:clamp(.95rem,1.3vw,1.05rem);max-width:62ch}
+.coach .cledger{
+  display:grid;grid-template-columns:repeat(2,1fr);margin-top:clamp(22px,3vw,34px);
+  border-top:1px solid var(--line);
+}
+@media(min-width:700px){.coach .cledger{grid-template-columns:repeat(4,1fr)}}
+.coach .cledger .c{padding:20px 18px 18px 0;border-bottom:1px solid var(--line)}
+@media(min-width:700px){
+  .coach .cledger .c{border-bottom:none;border-right:1px solid var(--line);padding-left:20px}
+  .coach .cledger .c:first-child{padding-left:0}
+  .coach .cledger .c:last-child{border-right:none}
+}
+@media(max-width:699px){.coach .cledger .c:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}}
+.coach .cledger b{display:block;font-size:clamp(1.3rem,2.4vw,1.85rem);font-weight:800;color:var(--green);letter-spacing:-.028em;line-height:1.05;margin-bottom:7px}
+.coach .cledger span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700;line-height:1.35;display:block}
+[data-lang="zh"] .coach .cledger span{letter-spacing:.06em}
 
 /* ---------- QUOTE BAND ---------- */
 .band{
@@ -640,33 +660,41 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
         <h2 class="sec-title"><span class="zh">到底是谁来带孩子的训练课</span><span class="en">Who actually takes the session</span></h2>
       </div>
     </div>
-    <div class="grid-2 rv">
-      <div class="coach">
-        <div class="avatar">ID<img src="images/coach-idris.jpg" alt="Coach Idris" style="object-position:52% 28%" onerror="this.remove()"></div>
-        <div>
-          <h3><span class="zh">Idris 教练（葡萄牙）</span><span class="en">Coach Idris (Portugal)</span></h3>
-          <div class="role"><span class="zh">联合创始人 · 主教练</span><span class="en">Co-Founder · Head Coach</span></div>
-          <p><span class="zh">葡萄牙职业青训教练，曾在法国、韩国执教，自2010年起长居中国。中文流利，深刻理解中国家庭的教育期望，是孩子与家长都信任的沟通桥梁。</span>
-          <span class="en">Portuguese youth coach with professional experience in France and South Korea, based in China since 2010. Fluent in Mandarin, he bridges European football culture and the expectations of Chinese families.</span></p>
-          <ul class="creds">
-            <li><b>UEFA C</b> <span class="zh">· 教练证书（进行中）</span><span class="en">· Coaching Licence (in progress)</span></li>
-            <li><span class="zh">工作语言：葡萄牙语 · 英语 · 法语 · 中文</span><span class="en">Languages: Portuguese · English · French · Mandarin</span></li>
-          </ul>
+    <p class="lede rv" style="margin-bottom:clamp(18px,3vw,34px)">
+      <span class="zh">不是助教，不是实习生。每一堂训练课都由两位创始人之一亲自带训。</span>
+      <span class="en">Not an assistant, not an intern. Every session is led by one of the two founders.</span>
+    </p>
+
+    <div class="coach rv">
+      <div class="avatar">RP<img src="images/coach-rodrigo.jpg" alt="Coach Rodrigo Paixão Mesquita" style="object-position:54% 22%" onerror="this.remove()"><span class="lic">CBF LICENCE A</span></div>
+      <div>
+        <div class="role"><span class="zh">联合创始人 · 技术总监</span><span class="en">Co-Founder · Technical Director</span></div>
+        <h3>Rodrigo Paixão Mesquita</h3>
+        <div class="sub"><span class="zh">前腰 · 巴西圣保罗</span><span class="en">Attacking midfielder · São Paulo, Brazil</span></div>
+        <p><span class="zh">从国际体育俱乐部（Internacional）青训体系出道，代表国际、菲格伦斯竞技与红牛布拉甘蒂诺征战巴西顶级联赛，并入选巴西 U17、U18、U20 国青队。自2009年起在中国职业足坛效力九年，辗转五家俱乐部，因此他设计的课程是贴合中国校历的，而不是把欧洲那一套原封不动搬过来。</span>
+        <span class="en">Came through Sport Club Internacional's academy and played Brazil's top flight for Internacional, Figueirense and Red Bull Bragantino. Represented Brazil at U17, U18 and U20 level. Nine years inside Chinese professional football across five clubs, which is why the programme is designed for Chinese school calendars rather than imported unchanged from Europe.</span></p>
+        <div class="cledger">
+          <div class="c"><b>250+</b><span class="zh">场职业比赛</span><span class="en">Pro matches</span></div>
+          <div class="c"><b>U17–U20</b><span class="zh">巴西国青队</span><span class="en">Brazil youth caps</span></div>
+          <div class="c"><b>9</b><span class="zh">年在华职业生涯</span><span class="en">Years in China</span></div>
+          <div class="c"><b>PT · EN · 中文</b><span class="zh">执教语言</span><span class="en">Coaching languages</span></div>
         </div>
       </div>
-      <div class="coach">
-        <div class="avatar">RP<img src="images/coach-rodrigo.jpg" alt="Coach Rodrigo Paixão Mesquita" style="object-position:54% 24%" onerror="this.remove()"></div>
-        <div>
-          <h3><span class="zh">Rodrigo Paixão Mesquita 教练（巴西）</span><span class="en">Coach Rodrigo Paixão Mesquita (Brazil)</span></h3>
-          <div class="role"><span class="zh">联合创始人 · 技术总监</span><span class="en">Co-Founder · Technical Director</span></div>
-          <p><span class="zh">巴西职业前腰球员，从国际体育俱乐部（Internacional）青训体系出道，代表国际队与菲格伦斯竞技（Figueirense）征战巴西联赛，并三次夺得南里奥格兰德州联赛冠军。自2009年起在中国职业联赛效力九年，随后转型教练。</span>
-          <span class="en">Came through Sport Club Internacional's youth academy and played in Brazil's top flight for Internacional and Figueirense, winning the Campeonato Gaúcho three times (2003, 2004, 2005). From 2009 he built a nine-year career in Chinese professional football before moving into coaching.</span></p>
-          <ul class="creds">
-            <li><b>CBF Academy Licence A</b> <span class="zh">· 2025</span><span class="en">· 2025</span></li>
-            <li><b>250+</b> <span class="zh">场职业比赛</span><span class="en">professional matches</span></li>
-            <li><span class="zh">巴西 U17 / U18 / U20 国青队</span><span class="en">Brazil youth national teams U17 / U18 / U20</span></li>
-            <li><span class="zh">在华效力5家职业俱乐部，共9年</span><span class="en">9 years, 5 professional clubs in China</span></li>
-          </ul>
+    </div>
+
+    <div class="coach rv">
+      <div class="avatar">ID<img src="images/coach-idris.jpg" alt="Coach Idris" style="object-position:52% 26%" onerror="this.remove()"><span class="lic">UEFA C · IN PROGRESS</span></div>
+      <div>
+        <div class="role"><span class="zh">联合创始人 · 主教练</span><span class="en">Co-Founder · Head Coach</span></div>
+        <h3>Idris Boudart</h3>
+        <div class="sub"><span class="zh">青训教练 · 葡萄牙</span><span class="en">Youth coach · Portugal</span></div>
+        <p><span class="zh">2010年赴华，在哈尔滨取得汉语言文化学士学位，随后在法国与韩国执教，2022年回到广州。中文流利，能直接与家长沟通，不需要翻译居中传话，这在实际操作中决定了家长能否真正了解孩子的训练情况。</span>
+        <span class="en">Moved to China in 2010 and took a degree in Chinese language and culture in Harbin, then coached in France and South Korea before returning to Guangzhou in 2022. Fluent in Mandarin, he speaks to parents directly rather than through an interpreter, which in practice decides how much a family actually understands about their child's development.</span></p>
+        <div class="cledger">
+          <div class="c"><b>2010</b><span class="zh">起长居中国</span><span class="en">In China since</span></div>
+          <div class="c"><b>4</b><span class="zh">种流利语言</span><span class="en">Fluent languages</span></div>
+          <div class="c"><b>3</b><span class="zh">国执教经历</span><span class="en">Countries coached in</span></div>
+          <div class="c"><b>PT · EN · FR · 中文</b><span class="zh">执教语言</span><span class="en">Coaching languages</span></div>
         </div>
       </div>
     </div>
