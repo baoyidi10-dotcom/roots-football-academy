@@ -263,10 +263,16 @@ nav{position:sticky;top:0;z-index:100;background:var(--green);border-bottom:1px 
 
 /* ---------- QUOTE BAND ---------- */
 .band{
-  background:var(--green2) url('images/roots-wide.jpg') center/cover no-repeat;
-  background-blend-mode:multiply;position:relative;padding:clamp(66px,10vw,150px) 0;
+  background:var(--green2) url('images/roots-wide.jpg') center 38%/cover no-repeat;
+  position:relative;padding:clamp(66px,10vw,150px) 0;
 }
-.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,44,31,.93),rgba(14,44,31,.66))}
+/* Dark enough on the left to carry the quote, clear enough on the right
+   to actually show the photograph. */
+.band::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(95deg,rgba(14,44,31,.92) 0%,rgba(14,44,31,.80) 30%,rgba(14,44,31,.44) 62%,rgba(14,44,31,.24) 100%)}
+@media(max-width:700px){
+  .band::before{background:linear-gradient(180deg,rgba(14,44,31,.86) 0%,rgba(14,44,31,.70) 55%,rgba(14,44,31,.42) 100%)}
+}
 .band .container{position:relative}
 .band p{
   font-size:clamp(1.4rem,3.6vw,2.7rem);color:var(--cream);font-weight:800;
