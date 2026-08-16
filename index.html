@@ -244,16 +244,25 @@ nav{position:sticky;top:0;z-index:100;background:var(--green);border-bottom:1px 
 .spain-col .k{font-size:.7rem;letter-spacing:.18em;color:var(--gold);font-weight:700;display:block;margin-bottom:14px}
 .spain-col p{color:rgba(244,241,232,.8);font-size:.92rem}
 .spain-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);margin-top:1px}
-.spain-strip img{width:100%;height:clamp(120px,17vw,230px);object-fit:cover;filter:grayscale(1) contrast(1.06);transition:filter .5s}
-.spain-strip a:hover img,.spain-strip a:focus-visible img{filter:grayscale(0) contrast(1)}
+.spain-strip img{width:100%;height:clamp(120px,17vw,230px);object-fit:cover;transition:transform .6s ease}
+.spain-strip a{overflow:hidden;display:block}
+.spain-strip a:hover img,.spain-strip a:focus-visible img{transform:scale(1.04)}
 
 /* ---------- COACHES ---------- */
 .coach{background:var(--white);padding:clamp(26px,3.4vw,44px);display:grid;gap:22px}
 @media(min-width:600px){.coach{grid-template-columns:auto 1fr;align-items:start}}
+/* Portrait slot. Shows the initials plate until a real headshot exists at
+   images/coach-idris.jpg or images/coach-rodrigo.jpg, then the photo covers it. */
 .coach .avatar{
-  width:74px;height:88px;background:var(--green);color:var(--gold2);display:flex;
-  align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;letter-spacing:.04em;flex-shrink:0;
+  position:relative;width:clamp(96px,13vw,132px);aspect-ratio:3/4;background:var(--green);
+  color:var(--gold2);display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;font-weight:800;letter-spacing:.04em;flex-shrink:0;overflow:hidden;
 }
+.coach .avatar img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.05);transition:filter .5s;
+}
+.coach:hover .avatar img{filter:grayscale(0) contrast(1)}
 .coach h3{font-size:clamp(1.1rem,1.7vw,1.35rem);color:var(--green);font-weight:800;letter-spacing:-.015em}
 .coach .role{font-size:.72rem;letter-spacing:.16em;color:var(--gold);font-weight:700;margin:7px 0 14px;text-transform:uppercase}
 .coach p{color:var(--grey);font-size:.92rem}
@@ -628,13 +637,12 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
       <div class="sec-num">04</div>
       <div class="sh-body">
         <span class="eyebrow"><span class="zh">教练团队</span><span class="en">Founders & Coaches</span></span>
-        <h2 class="sec-title"><span class="zh">真正的欧洲与南美职业背景</span><span class="en">Genuine European and South American pedigree</span></h2>
+        <h2 class="sec-title"><span class="zh">到底是谁来带孩子的训练课</span><span class="en">Who actually takes the session</span></h2>
       </div>
     </div>
     <div class="grid-2 rv">
       <div class="coach">
-        <!-- REPLACE: swap .avatar for a real 3:4 headshot when available -->
-        <div class="avatar">ID</div>
+        <div class="avatar">ID<img src="images/coach-idris.jpg" alt="Coach Idris" style="object-position:52% 28%" onerror="this.remove()"></div>
         <div>
           <h3><span class="zh">Idris 教练（葡萄牙）</span><span class="en">Coach Idris (Portugal)</span></h3>
           <div class="role"><span class="zh">联合创始人 · 主教练</span><span class="en">Co-Founder · Head Coach</span></div>
@@ -647,8 +655,7 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
         </div>
       </div>
       <div class="coach">
-        <!-- REPLACE: swap .avatar for a real 3:4 headshot when available -->
-        <div class="avatar">RP</div>
+        <div class="avatar">RP<img src="images/coach-rodrigo.jpg" alt="Coach Rodrigo Paixão Mesquita" style="object-position:54% 24%" onerror="this.remove()"></div>
         <div>
           <h3><span class="zh">Rodrigo Paixão Mesquita 教练（巴西）</span><span class="en">Coach Rodrigo Paixão Mesquita (Brazil)</span></h3>
           <div class="role"><span class="zh">联合创始人 · 技术总监</span><span class="en">Co-Founder · Technical Director</span></div>
