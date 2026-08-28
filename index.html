@@ -27,9 +27,41 @@
    Fonts are system stacks on purpose: Google Fonts is blocked in
    mainland China and would stall the page for local visitors.
    ============================================================ */
+/* ---------- SELF-HOSTED TYPE (subset to this page's characters, no Google Fonts:
+     they are blocked in mainland China) ---------- */
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/cormorant-garamond-400-001.woff2') format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A5,U+00A9,U+00B7,U+00D7,U+00E3,U+2013-2014,U+2193}
+@font-face{font-family:'Lora';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/lora-400-003.woff2') format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A5,U+00A9,U+00B7,U+00D7,U+00E3,U+2013-2014}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-005.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+FF03-FF04,U+FF07,U+FF0A,U+FF17-FF19,U+FF1C-FF1E,U+FF20-FF3A,U+FF3C,U+FF3E-FF5B,U+FF5D,U+FF61-FF64}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-006.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+8F97}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-007.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+3008-3009,U+3016-3017,U+FF02,U+FF1C,U+FF1E}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-008.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+2193,U+754F,U+FF05,U+FF0B}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-009.woff2') format('woff2');unicode-range:U+0020-0022,U+005E,U+00A0,U+640F,U+7CB9,U+7D6E,U+8E22,U+FF0F}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-010.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+300E-300F,U+60E7}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-011.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+7EF3,U+FF5C}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-012.woff2') format('woff2');unicode-range:U+0020-0022,U+0024,U+00A0,U+6C1B,U+788D,U+8404,U+8D4B,U+8D64,U+8D6B,U+8D74}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-013.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+00A5,U+4F0D,U+4FF1,U+62D4,U+642C,U+68AF,U+6DAF,U+77AC,U+8461,U+8482}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-014.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+300C-300D,U+5761,U+60EF,U+6EE8,U+7F72,U+8170,U+FF0D}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-015.woff2') format('woff2');unicode-range:U+0020-0022,U+00A0,U+59D3,U+5B55,U+5F84,U+624E,U+63E1,U+6446,U+6C9F,U+7518,U+78E8,U+795D,U+8000,U+83F2,U+8BD1,U+8DE8,U+9526,U+9F84,U+FF5E}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-016.woff2') format('woff2');unicode-range:U+0020-0023,U+003D,U+00A0,U+6297,U+62FC,U+638C,U+7259,U+7532,U+8499,U+89E6,U+8BFA}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-017.woff2') format('woff2');unicode-range:U+0020-0022,U+0026,U+003C,U+003E,U+00A0,U+00D7,U+4F26,U+523B,U+54C8,U+5723,U+5C01,U+5C04,U+5EAD,U+6267,U+6377,U+6388,U+63A2,U+654F,U+6863,U+6DFB,U+7840,U+7ADE,U+7EC3,U+80DC,U+8349,U+8BAD,U+8BFE,U+8D62,U+8DF3,U+900F,U+91CE,U+9488,U+9F50}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-018.woff2') format('woff2');unicode-range:U+0020-0022,U+007E,U+00A0,U+4E5D,U+5426,U+542B,U+542F,U+5473,U+5708,U+57F9,U+5802,U+5B69,U+5C42,U+5DE7,U+5E55,U+5E86,U+5F81,U+5FF5,U+64CD,U+66FE,U+6C49,U+6D32,U+7075,U+725B,U+73ED,U+76AE,U+76D1,U+7968,U+7EAF,U+7EB3,U+7EB8,U+7EC7,U+7F57,U+7FFB,U+8363,U+878D,U+8857,U+8863,U+8865,U+8BB2,U+8BDA,U+8C01,U+8D5B,U+8DA3,U+9000,U+9152,U+9669,U+969C,U+97E9,U+987E,U+989D}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-019.woff2') format('woff2');unicode-range:U+0020-0022,U+0025,U+00A0,U+4E60,U+4EB2,U+517B,U+51B3,U+51B5,U+5212,U+5219,U+54A8,U+54EA,U+56F4,U+5747,U+575B,U+5883,U+5957,U+5BA4,U+5C14,U+5C45,U+5DF4,U+5E95,U+5F80,U+5FD7,U+626B,U+62C9,U+6309,U+63A7,U+65AF,U+65C5,U+666E,U+6821,U+6838-6839,U+6B27,U+6BB5,U+6D4B,U+7387,U+76CA,U+76D8,U+79C1,U+7D20,U+7EAA,U+804C,U+8303,U+8BBF,U+8BE6,U+9002,U+961F,U+968F,U+9876,U+9884,U+9988,U+FF1B}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-020.woff2') format('woff2');unicode-range:U+0020-0022,U+002B,U+0040,U+00A0,U+3000,U+300A-300B,U+4E16,U+4E66,U+4E94,U+4EC0,U+50CF,U+5148,U+518D,U+51C6,U+529E-529F,U+5341,U+534F,U+5386,U+53C2,U+53D7,U+5411,U+5417,U+5468,U+56E0,U+56E2,U+56ED,U+5740,U+57FA,U+58EB,U+5904,U+59CB,U+5DDE,U+5E26,U+5E97,U+5F20,U+5F3A,U+5F8B,U+6218,U+628A,U+62A4,U+62E9,U+6307,U+6548,U+6574,U+6784,U+6BCF,U+7167,U+73AF,U+7403,U+754C,U+7559,U+795E,U+7B7E,U+7EA2,U+7EA6,U+7EC4,U+7EC6,U+7ECD,U+7EF4,U+80B2,U+81F3,U+82F1,U+8425,U+89C2,U+8BA9,U+8BE2,U+8BED,U+8D34,U+8D70,U+8DB3,U+9001,U+901F-9020,U+90A3,U+952E,U+9605,U+9645,U+9662,U+9700,U+9752,U+9879,U+9A8C}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-021.woff2') format('woff2');unicode-range:U+0020-0022,U+004E,U+00A0,U+3010-3011,U+4E24,U+4E48,U+4E50,U+4E5F,U+4E8B,U+4EA4,U+4ECB,U+4ECE,U+4ED6,U+4EE3,U+4EF6-4EF7,U+4EFB,U+4F20,U+4F55,U+4FDD,U+505A,U+5177,U+518C,U+521B,U+5229,U+52A9,U+5305,U+534E,U+5355,U+539F,U+53CA,U+53CD,U+53D6,U+5458,U+573A,U+590D,U+5934,U+5B8C,U+5BB9,U+5BFC,U+5C06,U+5DF2,U+5E03,U+5E38,U+5E76,U+5EFA,U+5F71,U+5F97,U+5FEB,U+603B,U+60F3,U+6216,U+6253,U+6301,U+6392,U+652F,U+6559,U+671F,U+672F,U+6807,U+6837,U+683C,U+6848,U+6B64,U+6BD4,U+6C34,U+6CA1,U+6D41,U+6D77,U+6E90,U+7136,U+7231,U+7531,U+76EE,U+76F4,U+771F,U+7801,U+793A,U+79CD,U+7A0B,U+7CBE,U+7EA7,U+7ED3,U+7ED9,U+7EDF,U+7F16,U+800C,U+8282,U+82B1,U+8350,U+897F,U+89C1,U+89C4,U+89E3,U+8A00,U+8BA1,U+8BAE,U+8BB0,U+8BBE,U+8BC1,U+8BFB,U+8D28,U+8D39,U+8D77,U+8DEF,U+8EAB,U+8F6C,U+8FD0,U+9009,U+90AE,U+90FD,U+91CC,U+9650,U+9891,U+98CE,U+FF1F}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-022.woff2') format('woff2');unicode-range:U+0020-0022,U+003C,U+003E,U+005F,U+007C,U+00A0,U+00A9,U+4E0A-4E0B,U+4E0D-4E0E,U+4E13,U+4E1A,U+4E2A,U+4E3A-4E3B,U+4E4B,U+4E86,U+4E8E,U+4EBA,U+4EE5,U+4EEC,U+4F1A,U+4F4D,U+4F53,U+4F5C,U+4FE1,U+5165,U+5168,U+516C,U+5173,U+5185,U+51FA,U+5206,U+5230,U+5236,U+524D,U+529B,U+52A0,U+52A8,U+5316,U+533A,U+53D1,U+53EF,U+53F7-53F8,U+5408,U+540C-540E,U+548C,U+56DE,U+56FD,U+5728,U+5730,U+5907,U+5916,U+591A,U+5927,U+5929,U+5982,U+5B50,U+5B66,U+5B89,U+5B9A,U+5B9E,U+5BB6,U+5BF9,U+5C0F,U+5DE5,U+5E73-5E74,U+5E7F,U+5EA6,U+5F00,U+5F0F,U+5F55,U+5FAE,U+5FC3,U+6027,U+606F,U+60A8,U+60C5,U+6210-6211,U+6240,U+624B,U+6280,U+62A5,U+63A5,U+63A8,U+63D0,U+6570,U+6587,U+65B9,U+65E0,U+65F6,U+660E,U+662F,U+66F4,U+6700,U+672C,U+673A,U+6765,U+679C,U+6B21,U+6B63,U+6CD5,U+6CE8,U+6D3B,U+70ED,U+7247,U+73B0,U+7406,U+751F,U+7528,U+76F8,U+770B,U+79D1,U+7B49,U+7CFB,U+7EBF,U+7ECF,U+8054,U+80FD,U+81EA,U+884C,U+8868,U+8981,U+89C6,U+8BBA,U+8BDD,U+8BF4,U+8BF7,U+8D44,U+8FC7,U+8FD9,U+8FDB,U+901A,U+9053,U+90E8,U+957F,U+95E8,U+95EE,U+95F4,U+9762,U+9898,U+FF01,U+FF08-FF09}
+@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:400 600;font-display:swap;src:url('fonts/noto-serif-sc-400-023.woff2') format('woff2');unicode-range:U+0020-0022,U+0027-002A,U+002C-003B,U+003F,U+0041-004D,U+004F-005D,U+0061-007B,U+007D,U+00A0,U+00B7,U+00E3,U+2013-2014,U+3001-3002,U+4E00,U+4E2D,U+65B0,U+65E5,U+6708-6709,U+7684,U+FF0C,U+FF0E,U+FF1A}
+
 :root{
   --green:#143C2B; --green2:#0E2C1F; --gold:#C8A34A; --gold2:#E0C070;
   --cream:#F4F1E8; --ink:#1C1C1C; --grey:#6A6A6A; --white:#FFFFFF;
+  /* Classical type system, carried over from the approved design */
+  --serif-d:'Cormorant Garamond','Noto Serif SC','Songti SC','Source Han Serif SC',Georgia,serif;
+  --serif-b:'Lora','Noto Serif SC','Songti SC','Source Han Serif SC',Georgia,serif;
+  --ink2:#201f1d;                 /* warm near-black, the design's text colour */
+  --acc:#b68235;                  /* bronze gold, legible on light ground */
+  --acc-lt:#facb8d;               /* light gold, for use on the dark hero */
+  --rule:color-mix(in srgb,#201f1d 16%, transparent);
+  --hero-ink:20,19,15;            /* hero scrim base, warm rather than green */
   --line:rgba(20,60,43,.16);
   --line-dark:rgba(224,192,112,.26);
   --pad:clamp(56px,7vw,104px);
@@ -38,11 +70,14 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  font-family:var(--serif-b);
   color:var(--ink);background:var(--cream);line-height:1.65;
-  font-size:16px;overflow-x:hidden;
+  font-size:16px;overflow-x:hidden;text-wrap:pretty;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
+/* Cormorant is a display serif: it sets small for its point size, so headings
+   carry a touch more weight and a tighter track than the old sans did. */
+h1,h2,h3,h4,h5,h6,.display{font-family:var(--serif-d);font-weight:600;letter-spacing:-.015em;line-height:1.14}
 /* Chinese and Latin need different metrics to look right */
 [data-lang="zh"] body,[data-lang="zh"] .zh{letter-spacing:.01em}
 [data-lang="zh"] .zh{line-height:1.85}
@@ -92,63 +127,116 @@ a{color:inherit;text-decoration:none}
 .skip:focus{left:0}
 .progress{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0;z-index:120;transition:width .1s linear}
 
-/* ---------- NAV ---------- */
-nav{position:sticky;top:0;z-index:100;background:var(--green);border-bottom:1px solid var(--line-dark)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
-.logo{display:flex;align-items:center;gap:11px;color:var(--white);font-weight:800;font-size:.95rem;letter-spacing:-.01em;flex-shrink:0}
-.logo img{height:32px;width:auto}
-.logo .lg-sub{color:var(--gold2);font-weight:600;font-size:.78rem;letter-spacing:.04em}
-@media(max-width:980px){.logo .lg-sub{display:none}}
-.nav-links{display:flex;gap:clamp(14px,2vw,28px);align-items:center}
-.nav-links a{color:rgba(244,241,232,.86);font-size:.85rem;font-weight:600;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold2);border-color:var(--gold)}
-.lang-btn{background:none;color:var(--gold2);border:1px solid var(--gold);padding:7px 15px;font-weight:700;cursor:pointer;font-size:.78rem;letter-spacing:.08em;font-family:inherit;transition:background .18s,color .18s}
-.lang-btn:hover{background:var(--gold);color:var(--green2)}
-.burger{display:none;background:none;border:1px solid var(--line-dark);width:42px;height:38px;cursor:pointer;position:relative}
-.burger span{display:block;width:18px;height:1.5px;background:var(--cream);margin:3.5px auto;transition:transform .28s,opacity .２s}
+/* ---------- NAV — light bar, classical type, as approved ---------- */
+nav{
+  position:sticky;top:0;z-index:100;height:62px;display:flex;align-items:center;gap:28px;
+  padding:0 max(20px,calc((100% - 1180px)/2 + 20px));
+  background:color-mix(in srgb,var(--cream) 92%, transparent);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);color:var(--ink2);
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink2);flex-shrink:0}
+.brand img{width:26px;height:26px;object-fit:contain}
+.brand span{font-family:var(--serif-d);font-weight:600;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
+.nav-links{
+  display:flex;align-items:center;gap:22px;margin-left:auto;flex:1;justify-content:flex-end;
+  white-space:nowrap;font-family:var(--serif-d);font-weight:600;font-size:12.5px;
+  letter-spacing:.05em;text-transform:uppercase;
+}
+.nav-links a{color:var(--ink2);transition:color .18s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--acc)}
+/* Enquire reads as a bordered control, not a solid block, per the design */
+.nav-cta{
+  color:var(--acc)!important;border:1px solid var(--acc);border-radius:4px;
+  padding:9px 16px;text-transform:none;letter-spacing:0;transition:background .18s
+}
+.nav-cta:hover{background:color-mix(in srgb,var(--acc) 12%, transparent)}
+.lang-btn{
+  background:none;color:var(--ink2);border:1px solid var(--rule);border-radius:4px;
+  padding:8px 12px;cursor:pointer;font-family:var(--serif-d);font-weight:600;
+  font-size:12.5px;letter-spacing:.05em;transition:background .18s,color .18s
+}
+.lang-btn:hover{background:color-mix(in srgb,var(--ink2) 7%, transparent);color:var(--acc)}
+.burger{display:none;background:none;border:1px solid var(--rule);border-radius:4px;
+  width:42px;height:38px;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:var(--ink2);margin:3.5px auto;
+  transition:transform .28s,opacity .2s}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 @media(max-width:900px){
-  .burger{display:block}
+  .burger{display:block;margin-left:auto}
   .nav-links{
-    position:fixed;inset:66px 0 auto 0;background:var(--green2);flex-direction:column;
-    align-items:flex-start;gap:0;padding:8px var(--gut) 26px;
-    border-bottom:1px solid var(--line-dark);
+    position:fixed;inset:62px 0 auto 0;background:var(--cream);flex-direction:column;
+    align-items:flex-start;gap:0;padding:8px 20px 26px;margin-left:0;
+    border-bottom:1px solid var(--rule);font-size:14px;
     transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
-    max-height:calc(100vh - 66px);overflow-y:auto;
+    max-height:calc(100vh - 62px);overflow-y:auto;
   }
   .nav-links.open{transform:none;opacity:1;pointer-events:auto}
-  .nav-links a{width:100%;padding:15px 0;border-bottom:1px solid var(--line-dark);font-size:1rem}
-  .nav-links .lang-wrap{padding-top:18px}
+  .nav-links a{width:100%;padding:15px 0;border-bottom:1px solid var(--rule)}
+  .nav-links .nav-cta{width:auto;margin-top:16px;border-bottom:1px solid var(--acc)}
 }
-.nav-cta{background:var(--gold);color:var(--green2)!important;padding:9px 17px;font-weight:800;font-size:.8rem;border:none!important}
-.nav-cta:hover{background:var(--gold2)}
 
-/* ---------- HERO VIDEO (kept at the very top, as before) ---------- */
-.hero-video{
-  position:relative;width:100%;background:var(--green2) url('images/roots-hero.jpg') center/cover no-repeat;
-  aspect-ratio:5/2;max-height:64vh;min-height:230px;overflow:hidden;
+/* ---------- HERO — ported 1:1 from the approved design ---------- */
+.hero{
+  position:relative;overflow:hidden;background:#14130f;
+  height:calc(100vh - 62px);height:calc(100svh - 62px);min-height:480px;
 }
-.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-video .fade{position:absolute;left:0;right:0;bottom:0;height:38%;
-  background:linear-gradient(transparent,rgba(14,44,31,.55) 55%,var(--green));pointer-events:none}
-.hero-video .watch-btn{
-  position:absolute;right:var(--gut);bottom:20px;background:rgba(14,44,31,.62);
-  border:1px solid var(--gold);color:var(--gold2);padding:10px 20px;font-weight:700;
-  font-size:.82rem;letter-spacing:.06em;backdrop-filter:blur(5px);transition:background .2s,color .2s;
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(.78) contrast(1.04)}
+.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(.78) contrast(1.04)}
+/* two washes: a vertical scrim that carries the text, then a vignette that closes the frame */
+.hero .scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,
+  rgba(var(--hero-ink),.62) 0%,rgba(var(--hero-ink),.34) 34%,
+  rgba(var(--hero-ink),.52) 68%,rgba(var(--hero-ink),.86) 100%)}
+.hero .vignette{position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 200px 40px rgba(12,11,9,.55)}
+.hero-inner{position:relative;z-index:2;height:100%;display:grid;grid-template-rows:1fr auto;
+  padding:0 clamp(20px,5vw,72px)}
+.hero-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:28px 0 20px;min-height:0}
+.hero-badge{width:clamp(112px,13vw,176px);max-height:22svh;height:auto;object-fit:contain;margin:0 auto}
+.hero-eyebrow{margin:26px 0 0;font-family:var(--serif-d);font-weight:600;font-size:12px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--acc-lt)}
+.hero h1{font-family:var(--serif-d);font-weight:400;font-size:clamp(25px,4.4vw,62px);
+  line-height:1.18;letter-spacing:-.01em;margin:18px 0 0;color:#f6f3ee;max-width:15em}
+.hero-sub{font-family:var(--serif-d);font-weight:400;font-size:clamp(16px,1.7vw,24px);
+  line-height:1.3;margin:14px 0 0;color:color-mix(in srgb,#f6f3ee 74%, transparent);max-width:30ch}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+.hbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  font-family:var(--serif-d);font-weight:600;font-size:14px;line-height:1.2;
+  padding:11px 20px;border:1px solid transparent;border-radius:4px;
+  transition:background .2s,color .2s}
+.hbtn-p{color:var(--acc-lt);border-color:var(--acc-lt)}
+.hbtn-p:hover{background:color-mix(in srgb,var(--acc-lt) 12%, transparent)}
+.hbtn-s{color:#f6f3ee;border-color:color-mix(in srgb,#f6f3ee 34%, transparent)}
+.hbtn-s:hover{background:color-mix(in srgb,#f6f3ee 10%, transparent)}
+.hero-foot{display:flex;align-items:end;justify-content:space-between;gap:24px;
+  padding-top:18px;padding-bottom:26px;
+  border-top:1px solid color-mix(in srgb,#f6f3ee 16%, transparent)}
+.hero-motto{margin:0;font-family:var(--serif-d);font-weight:600;font-size:11.5px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:color-mix(in srgb,#f6f3ee 55%, transparent)}
+.hero-cue{display:block;flex-shrink:0;color:var(--acc-lt);font-size:20px;line-height:1;
+  animation:rootsCue 2.4s ease-in-out infinite}
+.hero-cue:hover{color:#f6f3ee}
+@keyframes rootsCue{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:720px){
+  .hero-eyebrow{margin-top:18px;letter-spacing:.16em;font-size:11px}
+  .hero-foot{padding-top:14px;padding-bottom:20px}
+  .hero-motto.second{display:none}
+  .hero-actions{margin-top:24px}
 }
-.hero-video .watch-btn:hover{background:var(--gold);color:var(--green2)}
 
 /* ---------- MASTHEAD ---------- */
 .masthead{background:var(--green);color:var(--cream);padding:clamp(46px,6vw,88px) 0 0}
-.mast-grid{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,54px)}
-@media(min-width:900px){.mast-grid{grid-template-columns:1.35fr .85fr;align-items:end}}
+.mast-intro{max-width:70ch}
 .mast-flag{font-size:.78rem;letter-spacing:.14em;color:var(--gold2);margin-bottom:20px;font-weight:600}
 .masthead .display{color:var(--cream)}
 .masthead .display .hl{color:var(--gold2)}
 .mast-lead{color:rgba(244,241,232,.8);font-size:clamp(1rem,1.5vw,1.16rem);margin-top:24px;max-width:56ch}
-.mast-badge{width:clamp(96px,13vw,150px);height:auto;margin-bottom:26px;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4))}
 .mast-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{
   display:inline-block;padding:14px 26px;font-weight:800;font-size:.86rem;letter-spacing:.05em;
@@ -439,7 +527,7 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
-  .hero-video video{display:none}
+  .hero video{display:none}
 }
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
@@ -451,59 +539,69 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
 
 <!-- ============ NAV ============ -->
 <nav>
-  <div class="container nav-inner">
-    <a class="logo" href="#top">
-      <img src="images/roots-logo-icon-gold.png" alt="">
-      <span>ROOTS <span class="lg-sub">根源足球学院</span></span>
-    </a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navlinks">
-      <a href="#partners"><span class="zh">学校与合作</span><span class="en">Schools & Partners</span></a>
-      <a href="#pathways"><span class="zh">课程体系</span><span class="en">Pathways</span></a>
-      <a href="#coaches"><span class="zh">教练团队</span><span class="en">Coaches</span></a>
-      <a href="#spain"><span class="zh">西班牙 2026</span><span class="en">Spain 2026</span></a>
-      <a href="#media"><span class="zh">影像</span><span class="en">Media</span></a>
-      <a href="#fees"><span class="zh">价格</span><span class="en">Fees</span></a>
-      <a class="nav-cta" href="#contact"><span class="zh">咨询报名</span><span class="en">Enquire</span></a>
-      <span class="lang-wrap"><button class="lang-btn" onclick="toggleLang()"><span class="zh">EN</span><span class="en">中文</span></button></span>
-    </div>
+  <a class="brand" href="#top">
+    <img src="images/roots-logo-icon-gold.png" alt="">
+    <span>Roots</span>
+  </a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navlinks">
+    <a href="#partners">学校合作 Schools</a>
+    <a href="#pathways">课程 Pathways</a>
+    <a href="#coaches">教练 Coaches</a>
+    <a href="#gallery">影像 Gallery</a>
+    <a href="#media">视频 Films</a>
+    <a href="#fees">价格 Fees</a>
+    <a class="nav-cta" href="#contact">咨询 Enquire</a>
+    <button class="lang-btn" onclick="toggleLang()"><span class="zh">EN</span><span class="en">中文</span></button>
   </div>
 </nav>
 
-<!-- ============ HERO VIDEO — stays at the top, as it was ============ -->
-<div class="hero-video" id="top">
-  <video autoplay muted loop playsinline preload="metadata" poster="images/roots-hero.jpg">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <img class="poster" src="images/roots-hero.jpg" alt="" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="images/roots-hero.jpg" aria-hidden="true">
     <source src="videos/roots-hero.mp4" type="video/mp4">
   </video>
-  <div class="fade"></div>
-  <a class="watch-btn" href="#media">▶ <span class="zh">观看视频</span><span class="en">Watch Videos</span></a>
-</div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-mid">
+      <img class="hero-badge" src="images/roots-logo-light.png" alt="Roots Football Academy badge">
+      <p class="hero-eyebrow">Portugal &times; Brasil &middot; Rooted in Guangzhou</p>
+      <h1>把葡萄牙和巴西的足球基因<br>带给中国的孩子</h1>
+      <p class="hero-sub">The football DNA of Portugal and Brazil, taught in Guangzhou.</p>
+      <div class="hero-actions">
+        <a class="hbtn hbtn-p" href="#partners">学校与赛事合作 Schools &amp; Partners</a>
+        <a class="hbtn hbtn-s" href="#media">&#9654; 观看影片 Watch the films</a>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <p class="hero-motto">拼搏 &middot; 专注 &middot; 赤诚 &middot; 荣耀</p>
+      <a class="hero-cue" href="#partners" aria-label="Scroll down">&#8595;</a>
+      <p class="hero-motto second">Effort &middot; Dedication &middot; Devotion &middot; Glory</p>
+    </div>
+  </div>
+</section>
 
 <main id="main">
 
 <!-- ============ MASTHEAD ============ -->
 <header class="masthead">
   <div class="container">
-    <div class="mast-grid">
-      <div>
-        <img class="mast-badge" src="images/roots-logo-light.png" alt="Roots Football Academy badge">
-        <div class="mast-flag">🇵🇹 PORTUGAL &nbsp;×&nbsp; 🇧🇷 BRASIL &nbsp;·&nbsp; <span class="zh">扎根广州</span><span class="en">ROOTED IN GUANGZHOU</span> 🇨🇳</div>
-        <h1 class="display">
-          <span class="zh">把葡萄牙和巴西的<span class="hl">足球基因</span>，带给中国的孩子</span>
-          <span class="en">The football DNA of Portugal and Brazil, <span class="hl">taught in Guangzhou</span></span>
-        </h1>
-      </div>
-      <div>
-        <p class="mast-lead">
-          <span class="zh">根源足球学院由葡萄牙职业教练与巴西前职业球员联合创办。我们相信：技术、纪律与热爱，是每一位小球员成长的根。</span>
-          <span class="en">Founded by a Portuguese professional coach and a former Brazilian professional player. We believe technique, discipline and passion are the roots of every young player's growth.</span>
-        </p>
-        <div class="mast-actions">
-          <a class="btn btn-gold" href="#partners"><span class="zh">学校与赛事合作</span><span class="en">Schools & Partners</span></a>
-          <a class="btn btn-ghost" href="#contact"><span class="zh">咨询课程</span><span class="en">Enquire</span></a>
-        </div>
+    <!-- badge and headline now live in the hero, so this band carries the intro only -->
+    <div class="mast-intro">
+      <div class="mast-flag">🇵🇹 PORTUGAL &nbsp;×&nbsp; 🇧🇷 BRASIL &nbsp;·&nbsp; <span class="zh">扎根广州</span><span class="en">ROOTED IN GUANGZHOU</span> 🇨🇳</div>
+      <p class="mast-lead">
+        <span class="zh">根源足球学院由葡萄牙职业教练与巴西前职业球员联合创办。我们相信：技术、纪律与热爱，是每一位小球员成长的根。</span>
+        <span class="en">Founded by a Portuguese professional coach and a former Brazilian professional player. We believe technique, discipline and passion are the roots of every young player's growth.</span>
+      </p>
+      <div class="mast-actions">
+        <a class="btn btn-gold" href="#partners"><span class="zh">学校与赛事合作</span><span class="en">Schools & Partners</span></a>
+        <a class="btn btn-ghost" href="#contact"><span class="zh">咨询课程</span><span class="en">Enquire</span></a>
       </div>
     </div>
 
@@ -514,13 +612,6 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
       <div class="cell"><b>2026</b><span class="zh">西班牙国际赛事之旅</span><span class="en">Spain international tour</span></div>
     </div>
 
-    <!-- Club motto, taken from the crest -->
-    <div class="motto">
-      <span class="m"><span class="zh">拼搏</span><span class="en">EFFORT</span></span>
-      <span class="m"><span class="zh">专注</span><span class="en">DEDICATION</span></span>
-      <span class="m"><span class="zh">赤诚</span><span class="en">DEVOTION</span></span>
-      <span class="m"><span class="zh">荣耀</span><span class="en">GLORY</span></span>
-    </div>
   </div>
 </header>
 
@@ -1129,7 +1220,7 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
   }, {passive:true});
 
   /* ---- pause hero video when off-screen, saves battery and data ---- */
-  var hero = document.querySelector(".hero-video video");
+  var hero = document.querySelector(".hero video");
   if(hero && "IntersectionObserver" in window){
     new IntersectionObserver(function(entries){
       entries.forEach(function(en){
