@@ -127,15 +127,14 @@ a{color:inherit;text-decoration:none}
 .skip:focus{left:0}
 .progress{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0;z-index:120;transition:width .1s linear}
 
-/* ---------- NAV — light bar, classical type, as approved ---------- */
+/* ---------- NAV — green bar, classical type, gold accents, matches the site ---------- */
 nav{
   position:sticky;top:0;z-index:100;height:62px;display:flex;align-items:center;gap:28px;
   padding:0 max(20px,calc((100% - 1180px)/2 + 20px));
-  background:color-mix(in srgb,var(--cream) 92%, transparent);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--rule);color:var(--ink2);
+  background:var(--green);
+  border-bottom:1px solid var(--line-dark);color:rgba(244,241,232,.86);
 }
-.brand{display:flex;align-items:center;gap:10px;color:var(--ink2);flex-shrink:0}
+.brand{display:flex;align-items:center;gap:10px;color:var(--cream);flex-shrink:0}
 .brand img{width:26px;height:26px;object-fit:contain}
 .brand span{font-family:var(--serif-d);font-weight:600;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
 .nav-links{
@@ -143,23 +142,23 @@ nav{
   white-space:nowrap;font-family:var(--serif-d);font-weight:600;font-size:12.5px;
   letter-spacing:.05em;text-transform:uppercase;
 }
-.nav-links a{color:var(--ink2);transition:color .18s}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--acc)}
+.nav-links a{color:rgba(244,241,232,.86);transition:color .18s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold2)}
 /* Enquire reads as a bordered control, not a solid block, per the design */
 .nav-cta{
-  color:var(--acc)!important;border:1px solid var(--acc);border-radius:4px;
+  color:var(--gold2)!important;border:1px solid var(--gold);border-radius:4px;
   padding:9px 16px;text-transform:none;letter-spacing:0;transition:background .18s
 }
-.nav-cta:hover{background:color-mix(in srgb,var(--acc) 12%, transparent)}
+.nav-cta:hover{background:color-mix(in srgb,var(--gold) 16%, transparent)}
 .lang-btn{
-  background:none;color:var(--ink2);border:1px solid var(--rule);border-radius:4px;
+  background:none;color:var(--cream);border:1px solid var(--line-dark);border-radius:4px;
   padding:8px 12px;cursor:pointer;font-family:var(--serif-d);font-weight:600;
   font-size:12.5px;letter-spacing:.05em;transition:background .18s,color .18s
 }
-.lang-btn:hover{background:color-mix(in srgb,var(--ink2) 7%, transparent);color:var(--acc)}
-.burger{display:none;background:none;border:1px solid var(--rule);border-radius:4px;
+.lang-btn:hover{background:color-mix(in srgb,var(--cream) 10%, transparent);color:var(--gold2)}
+.burger{display:none;background:none;border:1px solid var(--line-dark);border-radius:4px;
   width:42px;height:38px;cursor:pointer}
-.burger span{display:block;width:18px;height:1.5px;background:var(--ink2);margin:3.5px auto;
+.burger span{display:block;width:18px;height:1.5px;background:var(--cream);margin:3.5px auto;
   transition:transform .28s,opacity .2s}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
@@ -167,15 +166,15 @@ nav{
 @media(max-width:900px){
   .burger{display:block;margin-left:auto}
   .nav-links{
-    position:fixed;inset:62px 0 auto 0;background:var(--cream);flex-direction:column;
+    position:fixed;inset:62px 0 auto 0;background:var(--green2);flex-direction:column;
     align-items:flex-start;gap:0;padding:8px 20px 26px;margin-left:0;
-    border-bottom:1px solid var(--rule);font-size:14px;
+    border-bottom:1px solid var(--line-dark);font-size:14px;
     transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
     max-height:calc(100vh - 62px);overflow-y:auto;
   }
   .nav-links.open{transform:none;opacity:1;pointer-events:auto}
-  .nav-links a{width:100%;padding:15px 0;border-bottom:1px solid var(--rule)}
-  .nav-links .nav-cta{width:auto;margin-top:16px;border-bottom:1px solid var(--acc)}
+  .nav-links a{width:100%;padding:15px 0;border-bottom:1px solid var(--line-dark)}
+  .nav-links .nav-cta{width:auto;margin-top:16px;border-bottom:1px solid var(--gold)}
 }
 
 /* ---------- HERO — ported 1:1 from the approved design ---------- */
@@ -552,7 +551,6 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
     <a href="#coaches">教练 Coaches</a>
     <a href="#gallery">影像 Gallery</a>
     <a href="#media">视频 Films</a>
-    <a href="#fees">价格 Fees</a>
     <a class="nav-cta" href="#contact">咨询 Enquire</a>
     <button class="lang-btn" onclick="toggleLang()"><span class="zh">EN</span><span class="en">中文</span></button>
   </div>
@@ -894,60 +892,11 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
   </div>
 </section>
 
-<!-- ============ 08 FEES ============ -->
-<section class="section on-white" id="fees">
-  <div class="container">
-    <div class="sec-head rv">
-      <div class="sec-num">08</div>
-      <div class="sh-body">
-        <span class="eyebrow"><span class="zh">班级与价格</span><span class="en">Classes & Fees</span></span>
-        <h2 class="sec-title"><span class="zh">透明的价格，看得见的成长</span><span class="en">Transparent fees, visible progress</span></h2>
-      </div>
-    </div>
-    <div class="price-grid rv">
-      <div class="price-card feature">
-        <h3><span class="zh">小组班（6人开班）</span><span class="en">Group Classes (from 6 players)</span></h3>
-        <div class="price">¥2,500 <small>/ 10 <span class="zh">节课</span><span class="en">classes</span></small></div>
-        <ul>
-          <li><span class="zh">每周一至周五 18:00-20:00</span><span class="en">Monday to Friday, 18:00-20:00</span></li>
-          <li><span class="zh">小班制，保证每个孩子的触球次数</span><span class="en">Small groups, maximum touches per child</span></li>
-          <li><span class="zh">葡萄牙/巴西教练亲自授课</span><span class="en">Coached directly by our Portuguese and Brazilian staff</span></li>
-          <li><span class="zh">定期家长反馈与成长记录</span><span class="en">Regular parent feedback and progress tracking</span></li>
-        </ul>
-        <a class="btn btn-gold" href="#contact"><span class="zh">咨询报名</span><span class="en">Enquire Now</span></a>
-      </div>
-      <div class="price-card">
-        <h3><span class="zh">一对一私教</span><span class="en">Private Training (1-on-1)</span></h3>
-        <div class="price">¥8,000 <small>/ 10 <span class="zh">节课</span><span class="en">classes</span></small></div>
-        <ul>
-          <li><span class="zh">完全个性化的训练计划</span><span class="en">Fully individualised training plan</span></li>
-          <li><span class="zh">针对性补强：控球、射门、速度、比赛阅读</span><span class="en">Targeted work: ball control, finishing, speed, game reading</span></li>
-          <li><span class="zh">时间灵活，按家庭日程安排</span><span class="en">Flexible scheduling around your family</span></li>
-          <li><span class="zh">适合备战校队选拔与精英梯队</span><span class="en">Ideal for school-team trials and elite pathway preparation</span></li>
-        </ul>
-        <a class="btn btn-gold" href="#contact"><span class="zh">咨询私教</span><span class="en">Enquire Now</span></a>
-      </div>
-      <div class="price-card">
-        <h3><span class="zh">国际赛事之旅</span><span class="en">International Tour</span></h3>
-        <div class="price"><span class="zh">按行程报价</span><span class="en">On application</span></div>
-        <ul>
-          <li><span class="zh">西班牙 2026 已完成：MICFootball7 与 FOOTVIA</span><span class="en">Spain 2026 completed: MICFootball7 and FOOTVIA</span></li>
-          <li><span class="zh">签证信、监护文件与保险由学院处理</span><span class="en">Visa letters, guardianship papers and insurance handled in-house</span></li>
-          <li><span class="zh">每队10-14名球员，2-3名持证教练随行</span><span class="en">10-14 players per squad, 2-3 qualified coaches travelling</span></li>
-          <li><span class="zh">名额有限，需提前规划</span><span class="en">Limited places, requires advance planning</span></li>
-        </ul>
-        <a class="btn btn-gold" href="#contact"><span class="zh">咨询行程</span><span class="en">Ask About The Tour</span></a>
-      </div>
-    </div>
-    <p class="note rv"><span class="zh">* 课程包有效期及退费规则请咨询顾问。名额有限，建议提前预约。</span><span class="en">* Ask our team about package validity and refund policy. Places are limited, early enrolment is recommended.</span></p>
-  </div>
-</section>
-
-<!-- ============ 09 FAQ ============ -->
+<!-- ============ 08 FAQ ============ -->
 <section class="section" id="faq">
   <div class="container">
     <div class="sec-head rv">
-      <div class="sec-num">09</div>
+      <div class="sec-num">08</div>
       <div class="sh-body">
         <span class="eyebrow"><span class="zh">家长常见问题</span><span class="en">For Parents</span></span>
         <h2 class="sec-title"><span class="zh">家长最常问的问题</span><span class="en">Questions parents ask</span></h2>
@@ -982,11 +931,11 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
   </div>
 </section>
 
-<!-- ============ 10 CONTACT ============ -->
+<!-- ============ 09 CONTACT ============ -->
 <section class="section on-white" id="contact">
   <div class="container">
     <div class="sec-head rv">
-      <div class="sec-num">10</div>
+      <div class="sec-num">09</div>
       <div class="sh-body">
         <span class="eyebrow"><span class="zh">联系我们</span><span class="en">Contact</span></span>
         <h2 class="sec-title"><span class="zh">咨询课程 · 预约报名</span><span class="en">Enquire and enrol</span></h2>
@@ -1043,7 +992,6 @@ footer{background:var(--green2);color:rgba(244,241,232,.68);padding:clamp(40px,5
       <div class="fl">
         <a href="#partners"><span class="zh">学校与合作</span><span class="en">Schools & Partners</span></a>
         <a href="#pathways"><span class="zh">课程体系</span><span class="en">Pathways</span></a>
-        <a href="#fees"><span class="zh">价格</span><span class="en">Fees</span></a>
         <a href="#faq">FAQ</a>
         <a href="#contact"><span class="zh">联系</span><span class="en">Contact</span></a>
       </div>
